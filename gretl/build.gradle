@@ -1,0 +1,124 @@
+buildscript {
+    repositories {
+        maven { url "http://download.osgeo.org/webdav/geotools/" }        
+        mavenCentral()
+        jcenter()
+        mavenLocal() 
+        maven { url 'http://jars.interlis.ch' }   
+    }
+    dependencies {
+        classpath 'ch.so.agi:gretl:1.0.+'
+    }
+    ext {
+        dbUriPub = "jdbc:postgresql://geodb_brw.verw.rootso.org:5432/pub"
+        dbUserPub = "bjsvwzie" 
+        dbPwdPub = System.env.dbPwdPub // bindestrich...
+        
+        dbUriVagrant = "jdbc:postgresql://192.168.50.6:5432/pub"
+        dbUserVagrant = "ddluser" 
+        dbPwdVagrant = "ddluser"
+
+        //dbUriVagrant = "jdbc:postgresql://geodb-dev.cgjofbdf5rqg.eu-central-1.rds.amazonaws.com:5432/xanadu2"
+        //dbUserVagrant = "stefan" 
+        //dbPwdVagrant = System.env.dbPwdVagrant
+    }
+}
+
+import ch.so.agi.gretl.api.*
+import ch.so.agi.gretl.tasks.*
+
+apply plugin: 'ch.so.agi.gretl'
+
+def GRETL_GROUP = "Gretl"
+
+def dbSchemaMOpublic = "agi_mopublic_pub"
+def dbSchemaHoheitsgrenzen = "agi_hoheitsgrenzen_pub"
+def dbSchemaGrundbuchplan = "agi_grundbuchplan_pub"
+
+task createMOpublicSchema(type: Ili2pgImportSchema) {
+    group = GRETL_GROUP
+    description = "Erstellt MOpublic-Schema."
+
+    database = [dbUriVagrant, dbUserVagrant, dbPwdVagrant]
+    models = "SO_MOpublic_20180430"
+    modeldir = "http://models.geo.admin.ch;." 
+    dbschema = dbSchemaMOpublic
+    nameByTopic = true
+    createFkIdx = true
+    createGeomIdx = true
+    strokeArcs = true
+    defaultSrsCode = 2056
+    smart2Inheritance = true
+    //logFile = "ili2pg.log"
+}
+
+task copyDataFromMOpublic(type: Db2Db) {
+    group = GRETL_GROUP
+    description = "Kopiert Daten vom MOpublic-Schema."
+    
+    sourceDb = [dbUriPub, dbUserPub, dbPwdPub]
+    targetDb = [dbUriVagrant, dbUserVagrant, dbPwdVagrant]
+    transferSets = [
+            new TransferSet("sql/mopublic_bodenbedeckung.sql", "agi_mopublic_pub.mopublic_bodenbedeckung", true),        
+            new TransferSet("sql/mopublic_bodenbedeckung_proj.sql", "agi_mopublic_pub.mopublic_bodenbedeckung_proj", true),        
+            new TransferSet("sql/mopublic_einzelobjekt_flaeche.sql", "agi_mopublic_pub.mopublic_einzelobjekt_flaeche", true),        
+            new TransferSet("sql/mopublic_einzelobjekt_linie.sql", "agi_mopublic_pub.mopublic_einzelobjekt_linie", true),        
+            new TransferSet("sql/mopublic_einzelobjekt_punkt.sql", "agi_mopublic_pub.mopublic_einzelobjekt_punkt", true),        
+            new TransferSet("sql/mopublic_fixpunkt.sql", "agi_mopublic_pub.mopublic_fixpunkt", true),        
+            new TransferSet("sql/mopublic_flurname.sql", "agi_mopublic_pub.mopublic_flurname", true),        
+            new TransferSet("sql/mopublic_gebaeudeadresse.sql", "agi_mopublic_pub.mopublic_gebaeudeadresse", true),        
+            new TransferSet("sql/mopublic_gelaendename.sql", "agi_mopublic_pub.mopublic_gelaendename", true),        
+            new TransferSet("sql/mopublic_gemeindegrenze_proj.sql", "agi_mopublic_pub.mopublic_gemeindegrenze_proj", true),        
+            new TransferSet("sql/mopublic_gemeindegrenze.sql", "agi_mopublic_pub.mopublic_gemeindegrenze", true),        
+            new TransferSet("sql/mopublic_grenzpunkt.sql", "agi_mopublic_pub.mopublic_grenzpunkt", true),        
+            new TransferSet("sql/mopublic_grundstueck_proj.sql", "agi_mopublic_pub.mopublic_grundstueck_proj", true),        
+            new TransferSet("sql/mopublic_grundstueck.sql", "agi_mopublic_pub.mopublic_grundstueck", true),        
+            new TransferSet("sql/mopublic_hoheitsgrenzpunkt.sql", "agi_mopublic_pub.mopublic_hoheitsgrenzpunkt", true),        
+            new TransferSet("sql/mopublic_objektname_pos.sql", "agi_mopublic_pub.mopublic_objektname_pos", true),        
+            new TransferSet("sql/mopublic_ortsname.sql", "agi_mopublic_pub.mopublic_ortsname", true),        
+            new TransferSet("sql/mopublic_rohrleitung.sql", "agi_mopublic_pub.mopublic_rohrleitung", true),        
+            new TransferSet("sql/mopublic_strassenachse.sql", "agi_mopublic_pub.mopublic_strassenachse", true),        
+            new TransferSet("sql/mopublic_strassenname_pos.sql", "agi_mopublic_pub.mopublic_strassenname_pos", true)     
+    ]
+}
+
+task createHoheitsgrenzenSchema(type: SqlExecutor) {
+    group = GRETL_GROUP
+    description = "Erstellt Hoheitsgrenzen-Schema und Kantonsgrenze-Tabelle."
+
+    database = [dbUriVagrant, dbUserVagrant, dbPwdVagrant]
+    sqlFiles = ["sql/createHoheitsgrenzenSchema.sql"]
+}    
+
+task copyDataFromHoheitsgrenzen(type: Db2Db) {
+    group = GRETL_GROUP
+    description = "Kopiert Daten vom Hoheitsgrenzen-Schema."
+    
+    sourceDb = [dbUriPub, dbUserPub, dbPwdPub]
+    targetDb = [dbUriVagrant, dbUserVagrant, dbPwdVagrant]
+    transferSets = [
+            new TransferSet("sql/hoheitsgrenzen_kantonsgrenze.sql", "agi_hoheitsgrenzen_pub.hoheitsgrenzen_kantonsgrenze", true)      
+    ]
+}
+
+task createGrundbuchplanSchema(type: SqlExecutor) {
+    group = GRETL_GROUP
+    description = "Erstellt Grundbuchplan-Schema und -Tabellen."
+
+    database = [dbUriVagrant, dbUserVagrant, dbPwdVagrant]
+    sqlFiles = ["sql/createGrundbuchplanSchema.sql"]
+} 
+
+task copyDataFromGrundbuchplan(type: Db2Db) {
+    group = GRETL_GROUP
+    description = "Kopiert Daten vom Hoheitsgrenzen-Schema."
+    
+    sourceDb = [dbUriPub, dbUserPub, dbPwdPub]
+    targetDb = [dbUriVagrant, dbUserVagrant, dbPwdVagrant]
+    transferSets = [
+            new TransferSet("sql/bodenbedeckung_boflaechesymbol.sql", "agi_grundbuchplan_pub.bodenbedeckung_boflaechesymbol", true),      
+            new TransferSet("sql/liegenschaften_grenzpunkt.sql", "agi_grundbuchplan_pub.liegenschaften_grenzpunkt", true),     
+            new TransferSet("sql/liegenschaften_grundstueckpos.sql", "agi_grundbuchplan_pub.liegenschaften_grundstueckpos", true),      
+            new TransferSet("sql/liegenschaften_liegenschaft.sql", "agi_grundbuchplan_pub.liegenschaften_liegenschaft", true)      
+    ]
+}
