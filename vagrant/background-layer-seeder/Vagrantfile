@@ -82,6 +82,8 @@ Vagrant.configure("2") do |config|
     apt-get install -y x2goserver x2goserver-xsession
     apt-get install -y apache2
     apt-get install -y qgis python-qgis qgis-plugin-grass qgis-server
+    mkdir -p /home/vagrant/.config/QGIS/
+    cp /vagrant/QGIS2.conf /home/vagrant/.config/QGIS/
     apt-get install -y qt4-qtconfig
     apt-get install -y mapcache-tools libapache2-mod-mapcache libmapcache1-dev
     service apache2 restart
