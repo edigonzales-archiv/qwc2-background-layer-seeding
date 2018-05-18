@@ -80,21 +80,27 @@ Vagrant.configure("2") do |config|
     apt-get update
     apt-get install -y xfce4 xfce4-whiskermenu-plugin xfce4-terminal thunar-archive-plugin
     apt-get install -y x2goserver x2goserver-xsession
-    apt-get install -y apache2
+    apt-get install -y apache2 libapache2-mod-fcgid
     apt-get install -y qgis python-qgis qgis-plugin-grass qgis-server
-    mkdir -p /home/vagrant/.config/QGIS/
-    cp /vagrant/QGIS2.conf /home/vagrant/.config/QGIS/
-    apt-get install -y qt4-qtconfig
+    #cp /vagrant/000-default.conf /etc/apache2/sites-available/000-default.conf
+    #mkdir -p /home/vagrant/.config/QGIS/
+    #cp /vagrant/QGIS2.conf /home/vagrant/.config/QGIS/
+    #apt-get install -y qt4-qtconfig
     apt-get install -y mapcache-tools libapache2-mod-mapcache libmapcache1-dev
     service apache2 restart
     apt-get install -y xauth zip
     apt-get install -y ifupdown
     apt-get install -y fonts-liberation
-    wget https://github.com/edigonzales/fonts/blob/master/Cadastra.zip?raw=true -O Cadastra.zip
-    unzip -d /usr/share/fonts/truetype/ Cadastra.zip
+    apt-get install -y git
+    mkdir -p /opt/geodata/
+    mkdir -p /opt/mapcache/
+    git clone https://github.com/edigonzales/qwc2-background-layer-seeding.git /tmp/qwc2-background-layer-seeding
+    cp /tmp/qwc2-background-layer-seeding/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+    cp /tmp/qwc2-background-layer-seeding/mapcache/mapcache.xml /opt/mapcache/
+    service apache2 restart
+    unzip -d /usr/share/fonts/truetype/ /tmp/qwc2-background-layer-seeding/fonts/Cadastra.zip
     fc-cache -f -v
-    wget https://github.com/edigonzales/symbols/blob/master/grundbuchplan.zip?raw=true -O grundbuchplan.zip
-    unzip -d /usr/share/qgis/svg/ grundbuchplan.zip
+    unzip -d /usr/share/qgis/svg/ /tmp/qwc2-background-layer-seeding/symbols/grundbuchplan.zip
     chmod +r /usr/share/qgis/svg/*.svg    
     apt-get install -y postgresql-10 
     apt-get install -y postgresql-client-10
@@ -107,6 +113,9 @@ Vagrant.configure("2") do |config|
     sudo -u postgres psql -d postgres -c "UPDATE pg_database SET datallowconn = FALSE WHERE datname = 'template1';"
     sudo -u postgres psql -d postgres -c "CREATE ROLE ddluser LOGIN PASSWORD 'ddluser';"
     sudo -u postgres psql -d postgres -c "CREATE ROLE dmluser LOGIN PASSWORD 'dmluser';"
+    sudo -u postgres psql -d postgres -c "CREATE ROLE dmluser LOGIN PASSWORD 'vagrant';"
+    sudo -u postgres psql -d postgres -c "CREATE ROLE dmluser LOGIN PASSWORD 'ubuntu';"
+    sudo -u postgres psql -d postgres -c "CREATE ROLE dmluser LOGIN PASSWORD 'www-data';"
     sudo -u postgres psql -d postgres -c "CREATE DATABASE pub WITH TEMPLATE = template0 ENCODING = 'UTF8' LC_COLLATE = 'en_US.UTF-8' LC_CTYPE = 'en_US.UTF-8' OWNER ddluser;"
     sudo -u postgres psql -d pub -c 'CREATE EXTENSION postgis;'
     sudo -u postgres psql -d pub -c 'CREATE EXTENSION "uuid-ossp";'
@@ -118,8 +127,8 @@ Vagrant.configure("2") do |config|
     systemctl stop postgresql
     rm /etc/postgresql/10/main/postgresql.conf
     rm /etc/postgresql/10/main/pg_hba.conf
-    cp /vagrant/postgresql.conf /etc/postgresql/10/main
-    cp /vagrant/pg_hba.conf /etc/postgresql/10/main
+    cp /tmp/qwc2-background-layer-seeding/postgres/postgresql.conf /etc/postgresql/10/main
+    cp /tmp/qwc2-background-layer-seeding/postgres/pg_hba.conf /etc/postgresql/10/main
     sudo -u root chown postgres:postgres /etc/postgresql/10/main/postgresql.conf
     sudo -u root chown postgres:postgres /etc/postgresql/10/main/pg_hba.conf
     service postgresql start
