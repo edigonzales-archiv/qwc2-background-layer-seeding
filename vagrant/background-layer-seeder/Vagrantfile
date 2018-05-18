@@ -82,17 +82,15 @@ Vagrant.configure("2") do |config|
     apt-get install -y x2goserver x2goserver-xsession
     apt-get install -y apache2 libapache2-mod-fcgid
     apt-get install -y qgis python-qgis qgis-plugin-grass qgis-server
-    #cp /vagrant/000-default.conf /etc/apache2/sites-available/000-default.conf
-    #mkdir -p /home/vagrant/.config/QGIS/
-    #cp /vagrant/QGIS2.conf /home/vagrant/.config/QGIS/
-    #apt-get install -y qt4-qtconfig
     apt-get install -y mapcache-tools libapache2-mod-mapcache libmapcache1-dev
     service apache2 restart
     apt-get install -y xauth zip
     apt-get install -y ifupdown
     apt-get install -y fonts-liberation
     apt-get install -y git
+    apt-get install -y unzip
     mkdir -p /opt/geodata/
+    mkdir -p /vagrant/
     mkdir -p /opt/mapcache/
     git clone https://github.com/edigonzales/qwc2-background-layer-seeding.git /tmp/qwc2-background-layer-seeding
     chown +rx -R /tmp/qwc2-background-layer-seeding
@@ -106,6 +104,7 @@ Vagrant.configure("2") do |config|
     apt-get install -y postgresql-10 
     apt-get install -y postgresql-client-10
     apt-get install -y postgresql-10-postgis-2.4
+    apt-get install -y postgresql-10-postgis-2.4-scripts
     apt-get install -y postgis
     sudo -u postgres psql -d postgres -c "UPDATE pg_database SET datistemplate = FALSE WHERE datname = 'template1';"
     sudo -u postgres psql -d postgres -c "DROP DATABASE template1;"
