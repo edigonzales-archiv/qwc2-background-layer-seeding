@@ -95,6 +95,7 @@ Vagrant.configure("2") do |config|
     mkdir -p /opt/geodata/
     mkdir -p /opt/mapcache/
     git clone https://github.com/edigonzales/qwc2-background-layer-seeding.git /tmp/qwc2-background-layer-seeding
+    chown +rx -R /tmp/qwc2-background-layer-seeding
     cp /tmp/qwc2-background-layer-seeding/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
     cp /tmp/qwc2-background-layer-seeding/mapcache/mapcache.xml /opt/mapcache/
     service apache2 restart
