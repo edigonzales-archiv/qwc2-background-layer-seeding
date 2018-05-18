@@ -123,6 +123,18 @@ Vagrant.configure("2") do |config|
     sudo -u postgres psql -d pub -c 'GRANT SELECT ON spatial_ref_sys TO dmluser;'
     sudo -u postgres psql -d pub -c 'GRANT SELECT ON geography_columns TO dmluser;'
     sudo -u postgres psql -d pub -c 'GRANT SELECT ON raster_columns TO dmluser;'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON geometry_columns TO vagrant;'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON spatial_ref_sys TO vagrant;'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON geography_columns TO vagrant;'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON raster_columns TO vagrant;'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON geometry_columns TO ubuntu;'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON spatial_ref_sys TO ubuntu;'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON geography_columns TO ubuntu;'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON raster_columns TO ubuntu;'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON geometry_columns TO "www-data";'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON spatial_ref_sys TO "www-data";'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON geography_columns TO "www-data";'
+    sudo -u postgres psql -d pub -c 'GRANT SELECT ON raster_columns TO "www-data";'
     sudo -u postgres psql -d pub -c "ALTER DATABASE pub SET postgis.gdal_enabled_drivers TO 'GTiff PNG JPEG';"
     systemctl stop postgresql
     rm /etc/postgresql/10/main/postgresql.conf
