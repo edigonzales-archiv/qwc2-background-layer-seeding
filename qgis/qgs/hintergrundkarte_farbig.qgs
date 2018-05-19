@@ -4534,7 +4534,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE("ogc_fid", '&lt;NULL>')</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="3000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="3000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>liegenschaften_grundstueckpos_hilfslinie20180518095227742</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=LineString table="agi_grundbuchplan_pub"."liegenschaften_grundstueckpos" (hilfslinie) sql=</datasource>
       <keywordList>
@@ -5551,7 +5551,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>liegenschaften_liegenschaft20180518095045348</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_grundbuchplan_pub"."liegenschaften_liegenschaft" (geometrie) sql=</datasource>
       <keywordList>
@@ -6247,7 +6247,7 @@ def my_form_open(dialog, layer, feature):
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_bodenbedeckung20180518092919271</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_bodenbedeckung" (geometrie) sql=</datasource>
       <keywordList>
@@ -8332,7 +8332,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_einzelobjekt_flaeche20180518092918147</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_einzelobjekt_flaeche" (geometrie) sql=</datasource>
       <keywordList>
@@ -8870,7 +8870,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE("ogc_fid", '&lt;NULL>')</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_einzelobjekt_flaeche20180518093618016</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_einzelobjekt_flaeche" (geometrie) sql=</datasource>
       <keywordList>
@@ -9694,7 +9694,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_einzelobjekt_linie20180518093619626</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=LineString table="agi_mopublic_pub"."mopublic_einzelobjekt_linie" (geometrie) sql=</datasource>
       <keywordList>
@@ -14360,7 +14360,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE("namenpos_von", '&lt;NULL>')</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
         <xmin>2592299.5</xmin>
         <ymin>1213465</ymin>
@@ -14872,7 +14872,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_gemeindegrenze_proj20180518113411541</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=LineString table="agi_mopublic_pub"."mopublic_gemeindegrenze_proj" (geometrie) sql=</datasource>
       <keywordList>
@@ -15353,7 +15353,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE( "gemeindename", '&lt;NULL>' )</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_grundstueck_geometrie20180518094250554</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_grundstueck" (geometrie) sql=</datasource>
       <keywordList>
@@ -15913,7 +15913,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE( "nummer", '&lt;NULL>' )</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_grundstueck_proj_geometrie20180518094249603</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_grundstueck_proj" (geometrie) sql=</datasource>
       <keywordList>
@@ -16473,7 +16473,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE("ogc_fid", '&lt;NULL>')</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_grundstueck_proj_geometrie20180518095056442</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_grundstueck_proj" (geometrie) sql=</datasource>
       <keywordList>
@@ -18806,7 +18806,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_rohrleitung20180518093628121</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=LineString table="agi_mopublic_pub"."mopublic_rohrleitung" (geometrie) sql=</datasource>
       <keywordList>
