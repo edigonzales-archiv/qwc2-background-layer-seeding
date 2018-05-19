@@ -28,9 +28,9 @@ cp /opt/qwc2-background-layer-seeding/apache/000-default.conf /etc/apache2/sites
 cp /opt/qwc2-background-layer-seeding/apache/fcgid.conf /etc/apache2/mods-available/fcgid.conf
 cp /opt/qwc2-background-layer-seeding/mapcache/mapcache.xml /opt/mapcache/
 service apache2 restart
-unzip -d /usr/share/fonts/truetype/ /tmp/qwc2-background-layer-seeding/fonts/Cadastra.zip
+unzip -d /usr/share/fonts/truetype/ /opt/qwc2-background-layer-seeding/fonts/Cadastra.zip
 fc-cache -f -v
-unzip -d /usr/share/qgis/svg/ /tmp/qwc2-background-layer-seeding/symbols/grundbuchplan.zip
+unzip -d /usr/share/qgis/svg/ /opt/qwc2-background-layer-seeding/symbols/grundbuchplan.zip
 chmod +r /usr/share/qgis/svg/*.svg    
 apt-get install -y postgresql-10 
 apt-get install -y postgresql-client-10
@@ -70,8 +70,8 @@ sudo -u postgres psql -d pub -c "ALTER DATABASE pub SET postgis.gdal_enabled_dri
 systemctl stop postgresql
 rm /etc/postgresql/10/main/postgresql.conf
 rm /etc/postgresql/10/main/pg_hba.conf
-cp /tmp/qwc2-background-layer-seeding/postgres/postgresql.conf /etc/postgresql/10/main
-cp /tmp/qwc2-background-layer-seeding/postgres/pg_hba.conf /etc/postgresql/10/main
+cp /opt/qwc2-background-layer-seeding/postgres/postgresql.conf /etc/postgresql/10/main
+cp /opt/qwc2-background-layer-seeding/postgres/pg_hba.conf /etc/postgresql/10/main
 sudo -u root chown postgres:postgres /etc/postgresql/10/main/postgresql.conf
 sudo -u root chown postgres:postgres /etc/postgresql/10/main/pg_hba.conf
 service postgresql start
