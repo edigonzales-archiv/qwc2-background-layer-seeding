@@ -19,7 +19,7 @@ apt-get install -y unzip
 mkdir -p /opt/geodata/
 mkdir -p /vagrant/
 mkdir -p /opt/mapcache/
-mkdir -P /tiles
+mkdir -p /tiles
 chown www-data:www-data -R /tiles
 chmod 7777 -R /tiles
 git clone https://github.com/edigonzales/qwc2-background-layer-seeding.git /opt/qwc2-background-layer-seeding
