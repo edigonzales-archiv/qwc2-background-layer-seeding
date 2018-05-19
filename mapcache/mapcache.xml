@@ -32,6 +32,8 @@
     <headers>
        <Host>ch.so.agi.orthofoto.rgb.s3.eu-central-1.amazonaws.com</Host>
     </headers>
+    <id>xxxxxxxxxxx</id>
+    <secret>yyyyyyyyyyyyyy</secret>
     <region>eu-central-1</region>
     <operation type="put">
       <headers>

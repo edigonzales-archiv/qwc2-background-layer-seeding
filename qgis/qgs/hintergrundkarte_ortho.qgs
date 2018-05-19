@@ -124,7 +124,7 @@
         <ymax>1320000</ymax>
       </extent>
       <id>LandsatMos2520180518075031931</id>
-      <datasource>./ch.swisstopo.landsat/LandsatMos25.tif</datasource>
+      <datasource>/vagrant/ch.swisstopo.landsat/LandsatMos25.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -555,7 +555,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1276000</ymax>
       </extent>
       <id>orthofoto_2015_rgb_12_5cm20180518082438387</id>
-      <datasource>./ch.bl.agi.orthofoto_2015.rgb/orthofoto_2015_rgb_12_5cm.vrt</datasource>
+      <datasource>/vagrant/ch.bl.agi.orthofoto_2015.rgb/orthofoto_2015_rgb_12_5cm.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -604,7 +604,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1276000</ymax>
       </extent>
       <id>orthofoto_2015_rgb_5m20180518082438457</id>
-      <datasource>./ch.bl.agi.orthofoto_2015.rgb/orthofoto_2015_rgb_5m.tif</datasource>
+      <datasource>/vagrant/ch.bl.agi.orthofoto_2015.rgb/orthofoto_2015_rgb_5m.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -653,7 +653,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1246000</ymax>
       </extent>
       <id>orthofoto_2016_rgb_12_5cm20180518081829266</id>
-      <datasource>./ch.so.agi.orthofoto_2016.rgb/orthofoto_2016_rgb_12_5cm.vrt</datasource>
+      <datasource>/vagrant/ch.so.agi.orthofoto_2016.rgb/orthofoto_2016_rgb_12_5cm.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -701,7 +701,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1246000</ymax>
       </extent>
       <id>orthofoto_2016_rgb_5m20180518081829056</id>
-      <datasource>./ch.so.agi.orthofoto_2016.rgb/orthofoto_2016_rgb_5m.tif</datasource>
+      <datasource>/vagrant/ch.so.agi.orthofoto_2016.rgb/orthofoto_2016_rgb_5m.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -750,7 +750,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1258000</ymax>
       </extent>
       <id>orthofoto_2017_rgb_12_5cm20180518082322645</id>
-      <datasource>./ch.so.agi.orthofoto_2017.rgb/orthofoto_2017_rgb_12_5cm.vrt</datasource>
+      <datasource>/vagrant/ch.so.agi.orthofoto_2017.rgb/orthofoto_2017_rgb_12_5cm.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -799,7 +799,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1258000</ymax>
       </extent>
       <id>orthofoto_2017_rgb_5m20180518075912403</id>
-      <datasource>./ch.so.agi.orthofoto_2017.rgb/orthofoto_2017_rgb_5m.tif</datasource>
+      <datasource>/vagrant/ch.so.agi.orthofoto_2017.rgb/orthofoto_2017_rgb_5m.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>

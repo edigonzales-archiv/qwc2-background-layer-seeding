@@ -360,7 +360,7 @@
         <ymax>1302000</ymax>
       </extent>
       <id>PK500_LV95_KREL_10L_Mosaic_201620180518114640660</id>
-      <datasource>./ch.swisstopo.lk500.farbig_relief/PK500_LV95_KREL_10L_Mosaic_2016.tif</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk500.farbig_relief/PK500_LV95_KREL_10L_Mosaic_2016.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1120,7 +1120,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1413000</ymax>
       </extent>
       <id>krel100020180518114447800</id>
-      <datasource>./ch.swisstopo.lk1000.farbig_relief/krel1000.tif</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk1000.farbig_relief/krel1000.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6010,7 +6010,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1302000</ymax>
       </extent>
       <id>lk100_farbig_relief20180518114859644</id>
-      <datasource>./ch.swisstopo.lk100.farbig_relief/lk100_farbig_relief.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk100.farbig_relief/lk100_farbig_relief.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6059,7 +6059,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1266000</ymax>
       </extent>
       <id>lk10_farbig_relief20180518115303649</id>
-      <datasource>./ch.swisstopo.lk10.farbig_relief/lk10_farbig_relief.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk10.farbig_relief/lk10_farbig_relief.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6108,7 +6108,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1319900</ymax>
       </extent>
       <id>lk200_farbig_relief20180518114731493</id>
-      <datasource>./ch.swisstopo.lk200.farbig_relief/lk200_farbig_relief.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk200.farbig_relief/lk200_farbig_relief.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6157,7 +6157,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1266000</ymax>
       </extent>
       <id>lk25_farbig_relief20180518115214292</id>
-      <datasource>./ch.swisstopo.lk25.farbig_relief/lk25_farbig_relief.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk25.farbig_relief/lk25_farbig_relief.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6206,7 +6206,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1278000</ymax>
       </extent>
       <id>lk50_farbig_relief20180518115004158</id>
-      <datasource>./ch.swisstopo.lk50.farbig_relief/lk50_farbig_relief.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk50.farbig_relief/lk50_farbig_relief.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
