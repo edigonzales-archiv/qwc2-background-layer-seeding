@@ -23,18 +23,15 @@
   </cache>
 
   <cache name="sqlite" type="sqlite3">
-    <dbfile>/tmp/{tileset}-{z}-{grid}.db</dbfile>
+    <dbfile>/tiles/{tileset}-{z}-{grid}.db</dbfile>
     <detect_blank/>
   </cache>
 
- <cache name="s3" type="s3">
-    <url>http://ch.so.agi.orthofoto.rgb.s3.eu-central-1.amazonaws.com/tiles/{tileset}/{grid}/{z}/{x}/{y}/{ext}</url>
-    <headers>
-       <Host>ch.so.agi.orthofoto.rgb.s3.eu-central-1.amazonaws.com</Host>
-    </headers>
-    <id>xxxxxxxxxxx</id>
-    <secret>yyyyyyyyyyyyyy</secret>
-    <region>eu-central-1</region>
+ <cache name="s3-exoscale" type="s3">
+    <url>https://sos-ch-dk-2.exo.io/ch.so.tiles.test1/{tileset}/{grid}/{z}/{y}/{x}/{ext}</url>
+    <id>xxxxxxxxx</id>
+    <secret>yyyyyyyyy</secret>
+    <region>ch-dk-2</region>
     <operation type="put">
       <headers>
         <x-amz-storage-class>REDUCED_REDUNDANCY</x-amz-storage-class>
@@ -42,7 +39,7 @@
      </headers>
     </operation>
   </cache>
-
+  
    <format name="myjpeg" type ="JPEG">
       <quality>80</quality>  
       <photometric>YCBCR</photometric>   <!-- RGB | YCBCR -->
@@ -111,7 +108,7 @@
 
    <tileset name="ch.so.agi.hintergrundkarte_sw">
       <source>ch.so.agi.hintergrundkarte_sw</source>
-      <cache>disk</cache>
+      <cache>s3-exoscale</cache>
       <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>      
       <format>PNG</format>
       <metatile>8 8</metatile>

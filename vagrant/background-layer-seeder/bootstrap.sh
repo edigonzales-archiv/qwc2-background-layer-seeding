@@ -25,6 +25,7 @@ chmod 7777 -R /tiles
 git clone https://github.com/edigonzales/qwc2-background-layer-seeding.git /opt/qwc2-background-layer-seeding
 chmod +rx -R /opt/qwc2-background-layer-seeding
 cp /opt/qwc2-background-layer-seeding/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+cp /opt/qwc2-background-layer-seeding/apache/fcgid.conf /etc/apache2/mods-available/fcgid.conf
 cp /opt/qwc2-background-layer-seeding/mapcache/mapcache.xml /opt/mapcache/
 service apache2 restart
 unzip -d /usr/share/fonts/truetype/ /tmp/qwc2-background-layer-seeding/fonts/Cadastra.zip
