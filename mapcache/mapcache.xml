@@ -56,7 +56,7 @@
          </params>
       </getmap>
       <http>
-         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/vagrant/hintergrundkarte_ortho.qgs</url>
+         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qwc2-background-layer-seeding/qgis/qgs/hintergrundkarte_ortho.qgs</url>
          <connection_timeout>60</connection_timeout>         
       </http>
    </source>
@@ -69,7 +69,7 @@
          </params>
       </getmap>
       <http>
-         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/vagrant/hintergrundkarte_farbig.qgs</url>
+         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qwc2-background-layer-seeding/qgis/qgs/hintergrundkarte_farbig.qgs</url>
          <connection_timeout>60</connection_timeout>         
       </http>
    </source>
@@ -82,7 +82,7 @@
          </params>
       </getmap>
       <http>
-         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/vagrant/hintergrundkarte_sw.qgs</url>
+         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qwc2-background-layer-seeding/qgis/qgs/hintergrundkarte_sw.qgs</url>
          <connection_timeout>60</connection_timeout>         
       </http>
    </source>
