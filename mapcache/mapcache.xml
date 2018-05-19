@@ -18,13 +18,27 @@
   </grid>
 
   <cache name="disk" type="disk">
-    <base>/tmp</base>
+    <base>/tmp/tiles/</base>
     <symlink_blank/>
   </cache>
 
   <cache name="sqlite" type="sqlite3">
     <dbfile>/tmp/{tileset}-{z}-{grid}.db</dbfile>
     <detect_blank/>
+  </cache>
+
+ <cache name="s3" type="s3">
+    <url>http://ch.so.agi.orthofoto.rgb.s3.eu-central-1.amazonaws.com/tiles/{tileset}/{grid}/{z}/{x}/{y}/{ext}</url>
+    <headers>
+       <Host>ch.so.agi.orthofoto.rgb.s3.eu-central-1.amazonaws.com</Host>
+    </headers>
+    <region>eu-central-1</region>
+    <operation type="put">
+      <headers>
+        <x-amz-storage-class>REDUCED_REDUNDANCY</x-amz-storage-class>
+        <x-amz-acl>public-read</x-amz-acl>
+     </headers>
+    </operation>
   </cache>
 
    <format name="myjpeg" type ="JPEG">

@@ -369,7 +369,7 @@
         <ymax>1302000</ymax>
       </extent>
       <id>PK500_LV95_KGRS_Mosaic_201620180518084224379</id>
-      <datasource>./ch.swisstopo.lk500.grau/PK500_LV95_KGRS_Mosaic_2016.tif</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk500.grau/PK500_LV95_KGRS_Mosaic_2016.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6363,7 +6363,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1288075</ymax>
       </extent>
       <id>lk1000_grau_relief20180518062030437</id>
-      <datasource>./ch.swisstopo.lk1000.grau_relief/lk1000-grau-relief.tif</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk1000.grau_relief/lk1000-grau-relief.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6412,7 +6412,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1302000</ymax>
       </extent>
       <id>lk100_grau20180518084736566</id>
-      <datasource>./ch.swisstopo.lk100.grau/lk100_grau.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk100.grau/lk100_grau.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6717,7 +6717,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1266000</ymax>
       </extent>
       <id>lk10_grau_relief20180518085328184</id>
-      <datasource>./ch.swisstopo.lk10.grau_relief/lk10_grau_relief.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk10.grau_relief/lk10_grau_relief.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6769,7 +6769,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1319900</ymax>
       </extent>
       <id>lk200_grau20180518084634962</id>
-      <datasource>./ch.swisstopo.lk200.grau/lk200_grau.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk200.grau/lk200_grau.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7074,7 +7074,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1266000</ymax>
       </extent>
       <id>lk25_grau20180518085239937</id>
-      <datasource>./ch.swisstopo.lk25.grau/lk25_grau.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk25.grau/lk25_grau.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7379,7 +7379,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1278000</ymax>
       </extent>
       <id>lk50_grau20180518085141264</id>
-      <datasource>./ch.swisstopo.lk50.grau/lk50_grau.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk50.grau/lk50_grau.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
