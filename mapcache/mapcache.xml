@@ -86,7 +86,7 @@
 
    <tileset name="ch.so.agi.hintergrundkarte_ortho">
       <source>ch.so.agi.hintergrundkarte_ortho</source>
-      <cache>disk</cache>
+      <cache>sqlite</cache>
       <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>      
       <format>myjpeg</format>
       <metatile>4 4</metatile>
@@ -97,7 +97,7 @@
 
    <tileset name="ch.so.agi.hintergrundkarte_farbig">
       <source>ch.so.agi.hintergrundkarte_farbig</source>
-      <cache>disk</cache>
+      <cache>sqlite</cache>
       <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>      
       <format>PNG</format>
       <metatile>8 8</metatile>
@@ -108,7 +108,7 @@
 
    <tileset name="ch.so.agi.hintergrundkarte_sw">
       <source>ch.so.agi.hintergrundkarte_sw</source>
-      <cache>s3-exoscale</cache>
+      <cache>sqlite</cache>
       <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>      
       <format>PNG</format>
       <metatile>8 8</metatile>
