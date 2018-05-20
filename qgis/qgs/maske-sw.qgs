@@ -7,7 +7,7 @@
     <customproperties/>
     <layer-tree-group expanded="1" checked="Qt::Checked" name="hintergrundkarte_sw">
       <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="maske20180520162300169" source="/vagrant/maske.gpkg|layername=maske" name="maske">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="maske20180520175213352" source="/vagrant/maske.gpkg" name="maske">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="hoheitsgrenzen_kantonsgrenze20180518060059902" source="dbname='pub' host=localhost port=5432 user='ddluser' sslmode=disable key='t_id' srid=2056 type=MultiPolygon table=&quot;agi_hoheitsgrenzen_pub&quot;.&quot;hoheitsgrenzen_kantonsgrenze&quot; (geometrie) sql=" name="hoheitsgrenzen_kantonsgrenze">
@@ -127,10 +127,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>2584816.94562165811657906</xmin>
-      <ymin>1219697.26609291415661573</ymin>
-      <xmax>2640174.25812165811657906</xmax>
-      <ymax>1270205.80984291434288025</ymax>
+      <xmin>2566949.15121991978958249</xmin>
+      <ymin>1189529.06928475899621844</ymin>
+      <xmax>2677663.77621991978958249</xmax>
+      <ymax>1290546.15678475936874747</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -185,14 +185,14 @@
       <item>liegenschaften_grenzpunkt20180518113423619</item>
       <item>mopublic_hoheitsgrenzpunkt_geometrie20180518113443668</item>
       <item>mopublic_fixpunkt_geometrie20180518113449718</item>
-      <item>maske20180520162300169</item>
+      <item>maske20180520175213352</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
     <legendgroup open="true" checked="Qt::Checked" name="hintergrundkarte_sw">
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="maske" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="maske20180520162300169" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="maske20180520175213352" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="hoheitsgrenzen_kantonsgrenze" showFeatureCount="0">
@@ -378,7 +378,7 @@
         <ymax>1302000</ymax>
       </extent>
       <id>PK500_LV95_KGRS_Mosaic_201620180518084224379</id>
-      <datasource>./ch.swisstopo.lk500.grau/PK500_LV95_KGRS_Mosaic_2016.tif</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk500.grau/PK500_LV95_KGRS_Mosaic_2016.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4896,7 +4896,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE("ogc_fid", '&lt;NULL>')</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="3000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="3000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>liegenschaften_grundstueckpos_hilfslinie20180518095227742</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=LineString table="agi_grundbuchplan_pub"."liegenschaften_grundstueckpos" (hilfslinie) sql=</datasource>
       <keywordList>
@@ -5913,7 +5913,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>liegenschaften_liegenschaft20180518095045348</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_grundbuchplan_pub"."liegenschaften_liegenschaft" (geometrie) sql=</datasource>
       <keywordList>
@@ -6372,7 +6372,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1288075</ymax>
       </extent>
       <id>lk1000_grau_relief20180518062030437</id>
-      <datasource>./ch.swisstopo.lk1000.grau_relief/lk1000-grau-relief.tif</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk1000.grau_relief/lk1000-grau-relief.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6421,7 +6421,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1302000</ymax>
       </extent>
       <id>lk100_grau20180518084736566</id>
-      <datasource>./ch.swisstopo.lk100.grau/lk100_grau.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk100.grau/lk100_grau.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6726,7 +6726,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1266000</ymax>
       </extent>
       <id>lk10_grau_relief20180518085328184</id>
-      <datasource>./ch.swisstopo.lk10.grau_relief/lk10_grau_relief.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk10.grau_relief/lk10_grau_relief.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6778,7 +6778,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1319900</ymax>
       </extent>
       <id>lk200_grau20180518084634962</id>
-      <datasource>./ch.swisstopo.lk200.grau/lk200_grau.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk200.grau/lk200_grau.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7083,7 +7083,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1266000</ymax>
       </extent>
       <id>lk25_grau20180518085239937</id>
-      <datasource>./ch.swisstopo.lk25.grau/lk25_grau.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk25.grau/lk25_grau.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7388,7 +7388,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>1278000</ymax>
       </extent>
       <id>lk50_grau20180518085141264</id>
-      <datasource>./ch.swisstopo.lk50.grau/lk50_grau.vrt</datasource>
+      <datasource>/vagrant/ch.swisstopo.lk50.grau/lk50_grau.vrt</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7686,8 +7686,8 @@ def my_form_open(dialog, layer, feature):
       <blendMode>0</blendMode>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <id>maske20180520162300169</id>
-      <datasource>./maske.gpkg|layername=maske</datasource>
+      <id>maske20180520175213352</id>
+      <datasource>/vagrant/maske.gpkg</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7730,7 +7730,7 @@ def my_form_open(dialog, layer, feature):
                 <prop k="offset" v="0,0"/>
                 <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
                 <prop k="offset_unit" v="MM"/>
-                <prop k="outline_color" v="0,0,0,255"/>
+                <prop k="outline_color" v="128,152,72,255"/>
                 <prop k="outline_style" v="no"/>
                 <prop k="outline_width" v="0.26"/>
                 <prop k="outline_width_unit" v="MM"/>
@@ -7914,6 +7914,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Sans Serif,9,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -7947,7 +7948,7 @@ def my_form_open(dialog, layer, feature):
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <attributeactions default="-1"/>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="859375088">
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
         <columns>
           <column width="-1" hidden="0" type="field" name="fid"/>
           <column width="-1" hidden="0" type="field" name="dummy"/>
@@ -7988,7 +7989,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_bodenbedeckung20180518092919271</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_bodenbedeckung" (geometrie) sql=</datasource>
       <keywordList>
@@ -10078,7 +10079,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_einzelobjekt_flaeche20180518092918147</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_einzelobjekt_flaeche" (geometrie) sql=</datasource>
       <keywordList>
@@ -10425,7 +10426,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_einzelobjekt_flaeche20180518093618016</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_einzelobjekt_flaeche" (geometrie) sql=</datasource>
       <keywordList>
@@ -11249,7 +11250,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_einzelobjekt_linie20180518093619626</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=LineString table="agi_mopublic_pub"."mopublic_einzelobjekt_linie" (geometrie) sql=</datasource>
       <keywordList>
@@ -15915,7 +15916,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE("namenpos_von", '&lt;NULL>')</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
         <xmin>2592299.5</xmin>
         <ymin>1213465</ymin>
@@ -16427,7 +16428,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_gemeindegrenze_proj20180518113411541</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=LineString table="agi_mopublic_pub"."mopublic_gemeindegrenze_proj" (geometrie) sql=</datasource>
       <keywordList>
@@ -16908,7 +16909,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE( "gemeindename", '&lt;NULL>' )</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_grundstueck_geometrie20180518094250554</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_grundstueck" (geometrie) sql=</datasource>
       <keywordList>
@@ -17468,7 +17469,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE( "nummer", '&lt;NULL>' )</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_grundstueck_proj_geometrie20180518094249603</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_grundstueck_proj" (geometrie) sql=</datasource>
       <keywordList>
@@ -18028,7 +18029,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>COALESCE("ogc_fid", '&lt;NULL>')</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_grundstueck_proj_geometrie20180518095056442</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=Polygon table="agi_mopublic_pub"."mopublic_grundstueck_proj" (geometrie) sql=</datasource>
       <keywordList>
@@ -20361,7 +20362,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Line" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mopublic_rohrleitung20180518093628121</id>
       <datasource>dbname='pub' host=localhost port=5432 user='ddluser' password='ddluser' sslmode=disable key='t_id' srid=2056 type=LineString table="agi_mopublic_pub"."mopublic_rohrleitung" (geometrie) sql=</datasource>
       <keywordList>
@@ -21095,15 +21096,15 @@ def my_form_open(dialog, layer, feature):
       <DistanceUnits type="QString">meters</DistanceUnits>
       <AreaUnits type="QString">m2</AreaUnits>
     </Measurement>
+    <Legend>
+      <filterByMap type="bool">false</filterByMap>
+    </Legend>
     <WMSExtent type="QStringList">
       <value>2570000</value>
       <value>1208000</value>
       <value>2667000</value>
       <value>1268000</value>
     </WMSExtent>
-    <Legend>
-      <filterByMap type="bool">false</filterByMap>
-    </Legend>
     <DefaultStyles>
       <Fill type="QString"></Fill>
       <Line type="QString"></Line>
@@ -21248,7 +21249,7 @@ def my_form_open(dialog, layer, feature):
       <variableValues type="QStringList"/>
     </Variables>
     <Paths>
-      <Absolute type="bool">false</Absolute>
+      <Absolute type="bool">true</Absolute>
     </Paths>
     <WMSContactPosition type="QString"></WMSContactPosition>
     <PositionPrecision>
@@ -21265,11 +21266,11 @@ def my_form_open(dialog, layer, feature):
       <SelectionColorGreenPart type="int">255</SelectionColorGreenPart>
       <CanvasColorBluePart type="int">255</CanvasColorBluePart>
     </Gui>
-    <WFSLayers type="QStringList"/>
-    <WMSServiceAbstract type="QString"></WMSServiceAbstract>
     <Measure>
       <Ellipsoid type="QString">NONE</Ellipsoid>
     </Measure>
+    <WMSServiceAbstract type="QString"></WMSServiceAbstract>
+    <WFSLayers type="QStringList"/>
     <WFSUrl type="QString"></WFSUrl>
     <WMSServiceCapabilities type="bool">false</WMSServiceCapabilities>
     <WMSUseLayerIDs type="bool">false</WMSUseLayerIDs>
