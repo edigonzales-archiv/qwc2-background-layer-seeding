@@ -27,6 +27,7 @@ chmod +rx -R /opt/qwc2-background-layer-seeding
 cp /opt/qwc2-background-layer-seeding/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 cp /opt/qwc2-background-layer-seeding/apache/fcgid.conf /etc/apache2/mods-available/fcgid.conf
 cp /opt/qwc2-background-layer-seeding/mapcache/mapcache.xml /opt/mapcache/
+cp /opt/qwc2-background-layer-seeding/maske/maske.gpkg /vagrant/
 service apache2 restart
 unzip -d /usr/share/fonts/truetype/ /opt/qwc2-background-layer-seeding/fonts/Cadastra.zip
 fc-cache -f -v
