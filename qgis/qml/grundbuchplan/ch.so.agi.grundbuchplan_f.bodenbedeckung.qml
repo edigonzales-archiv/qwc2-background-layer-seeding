@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.18.19" simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.18.17" simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="t_id">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
@@ -33,8 +33,8 @@
       <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'uebrige_befestigte'" key="{458ceabd-3f22-427a-9b13-b79b1ba03948}" symbol="2" label="uebrige_befestigte"/>
       <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Flugplatz'" key="{0b77290e-65d3-4719-9762-a612957e6950}" symbol="3" label="Flugplatz"/>
       <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Trottoir'" key="{00e98355-cb9d-4f46-b8be-40d35d396b57}" symbol="4" label="Trottoir"/>
-      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'stehendes'" key="{e9bfde7d-df40-4a40-b6c1-d6dfd51521ba}" symbol="5" label="Gewaesser_stehendes"/>
-      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'fliessendes'" key="{35e34a34-2a4e-4d09-91ef-ddbdfb1463c1}" symbol="6" label="Gewaesser_fliessendes"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'stehendes Gewaesser'" key="{e9bfde7d-df40-4a40-b6c1-d6dfd51521ba}" symbol="5" scalemindenom="1" label="Gewaesser_stehendes"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'fliessendes Gewaesser'" key="{35e34a34-2a4e-4d09-91ef-ddbdfb1463c1}" symbol="6" scalemindenom="1" label="Gewaesser_fliessendes"/>
       <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Wasserbecken'" key="{0b4ff262-b207-4e97-b57d-60b34bc7aa90}" symbol="7" label="Wasserbecken"/>
       <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Reben'" key="{e56d45c1-0ae2-44ae-80ea-b4de4490c50e}" label="Reben">
         <rule scalemaxdenom="300" key="{08581874-8b17-4310-bf90-38f8d23c775b}" symbol="8" scalemindenom="300" label="1:250"/>
@@ -87,7 +87,7 @@
         <rule scalemaxdenom="6000" key="{0cbe1cbf-5f62-4fe4-908a-195a5e35155b}" symbol="43" scalemindenom="3000" label="1:5000"/>
         <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'geschlossener_Wald'" key="{eee015e8-7ce3-4174-8ea1-d6e29c2f76da}" symbol="44" scalemindenom="3000" label="> 1:5000"/>
       </rule>
-      <rule filter="&quot;art_txt&quot; IN ('fliessendes', 'Flugplatz', 'Gebaeude', 'stehendes', 'Strasse_Weg', 'Trottoir', 'Verkehrsinsel', 'Wasserbecken')" key="{70aea02f-6758-4443-a96a-4ad296b7795b}" label="ausgezogen">
+      <rule filter="&quot;art_txt&quot; IN ('fliessendes Gewaesser', 'Flugplatz', 'Gebaeude', 'stehendes Gewaesser', 'Strasse_Weg', 'Trottoir', 'Verkehrsinsel', 'Wasserbecken')" key="{70aea02f-6758-4443-a96a-4ad296b7795b}" label="ausgezogen">
         <rule scalemaxdenom="300" key="{0678fcf8-fa63-46f8-bf4e-02035adcd56e}" symbol="45" scalemindenom="1" label="1:250"/>
         <rule scalemaxdenom="750" key="{8432aa0a-d0d2-46ce-87c4-c426606af00a}" symbol="46" scalemindenom="300" label="1:500"/>
         <rule scalemaxdenom="1250" key="{ba7079df-1832-48ab-a0a7-2fd1c5d1ff53}" symbol="47" scalemindenom="750" label="1:1000"/>
@@ -2022,7 +2022,7 @@
   <editform>/var/www/maps/qgis-server-projekte/grundbuchplan</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
-  <editforminitfilepath>.</editforminitfilepath>
+  <editforminitfilepath>/vagrant</editforminitfilepath>
   <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is

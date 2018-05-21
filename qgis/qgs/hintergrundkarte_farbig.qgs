@@ -127,10 +127,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>2609000.03021068871021271</xmin>
-      <ymin>1228302.74394043372012675</ymin>
-      <xmax>2609303.08018605411052704</xmax>
-      <ymax>1228579.2496493982616812</ymax>
+      <xmin>2567575</xmin>
+      <ymin>1206500</ymin>
+      <xmax>2669425</xmax>
+      <ymax>1269500</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -6266,6 +6266,12 @@ def my_form_open(dialog, layer, feature):
       <blendMode>0</blendMode>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <extent>
+        <xmin>2570000</xmin>
+        <ymin>1208000</ymin>
+        <xmax>2667000</xmax>
+        <ymax>1268000</ymax>
+      </extent>
       <id>maske20180521084251545</id>
       <datasource>/vagrant/maske.gpkg</datasource>
       <keywordList>
@@ -6628,8 +6634,8 @@ def my_form_open(dialog, layer, feature):
           <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'uebrige_befestigte'" key="{458ceabd-3f22-427a-9b13-b79b1ba03948}" symbol="2" label="uebrige_befestigte"/>
           <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Flugplatz'" key="{0b77290e-65d3-4719-9762-a612957e6950}" symbol="3" label="Flugplatz"/>
           <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Trottoir'" key="{00e98355-cb9d-4f46-b8be-40d35d396b57}" symbol="4" label="Trottoir"/>
-          <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'stehendes'" key="{e9bfde7d-df40-4a40-b6c1-d6dfd51521ba}" symbol="5" label="Gewaesser_stehendes"/>
-          <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'fliessendes'" key="{35e34a34-2a4e-4d09-91ef-ddbdfb1463c1}" symbol="6" label="Gewaesser_fliessendes"/>
+          <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'stehendes Gewaesser'" key="{e9bfde7d-df40-4a40-b6c1-d6dfd51521ba}" symbol="5" scalemindenom="1" label="Gewaesser_stehendes"/>
+          <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'fliessendes Gewaesser'" key="{35e34a34-2a4e-4d09-91ef-ddbdfb1463c1}" symbol="6" scalemindenom="1" label="Gewaesser_fliessendes"/>
           <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Wasserbecken'" key="{0b4ff262-b207-4e97-b57d-60b34bc7aa90}" symbol="7" label="Wasserbecken"/>
           <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Reben'" key="{e56d45c1-0ae2-44ae-80ea-b4de4490c50e}" label="Reben">
             <rule scalemaxdenom="300" key="{08581874-8b17-4310-bf90-38f8d23c775b}" symbol="8" scalemindenom="300" label="1:250"/>
@@ -6682,7 +6688,7 @@ def my_form_open(dialog, layer, feature):
             <rule scalemaxdenom="6000" key="{0cbe1cbf-5f62-4fe4-908a-195a5e35155b}" symbol="43" scalemindenom="3000" label="1:5000"/>
             <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'geschlossener_Wald'" key="{eee015e8-7ce3-4174-8ea1-d6e29c2f76da}" symbol="44" scalemindenom="3000" label="> 1:5000"/>
           </rule>
-          <rule filter="&quot;art_txt&quot; IN ('fliessendes', 'Flugplatz', 'Gebaeude', 'stehendes', 'Strasse_Weg', 'Trottoir', 'Verkehrsinsel', 'Wasserbecken')" key="{70aea02f-6758-4443-a96a-4ad296b7795b}" label="ausgezogen">
+          <rule filter="&quot;art_txt&quot; IN ('fliessendes Gewaesser', 'Flugplatz', 'Gebaeude', 'stehendes Gewaesser', 'Strasse_Weg', 'Trottoir', 'Verkehrsinsel', 'Wasserbecken')" key="{70aea02f-6758-4443-a96a-4ad296b7795b}" label="ausgezogen">
             <rule scalemaxdenom="300" key="{0678fcf8-fa63-46f8-bf4e-02035adcd56e}" symbol="45" scalemindenom="1" label="1:250"/>
             <rule scalemaxdenom="750" key="{8432aa0a-d0d2-46ce-87c4-c426606af00a}" symbol="46" scalemindenom="300" label="1:500"/>
             <rule scalemaxdenom="1250" key="{ba7079df-1832-48ab-a0a7-2fd1c5d1ff53}" symbol="47" scalemindenom="750" label="1:1000"/>
@@ -8992,6 +8998,7 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Sans Serif,9,-1,5,50,0,0,0,0,0" style=""/>
+          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">

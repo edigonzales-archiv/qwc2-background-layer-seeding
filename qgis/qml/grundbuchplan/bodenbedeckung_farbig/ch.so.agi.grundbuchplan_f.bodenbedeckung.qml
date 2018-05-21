@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.18.19" simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="1" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.18.17" simplifyAlgorithm="0" minimumScale="1" maximumScale="5000" simplifyDrawingHints="0" minLabelScale="1" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="t_id">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
@@ -30,50 +30,50 @@
     <rules key="{49652c06-68b8-40ef-bd97-2b81be29a1aa}">
       <rule filter="&quot;art_txt&quot; = 'Gebaeude'" key="{00d2f774-89e4-4bce-9c13-7d7709a47911}" symbol="0" label="Gebaeude"/>
       <rule filter="&quot;art_txt&quot; = 'Strasse_Weg'" key="{e9d438a8-8af5-44fe-843a-3041acbd9fdb}" symbol="1" label="Strasse_Weg"/>
-      <rule filter="&quot;art_txt&quot; = 'uebrige_befestigte'" key="{458ceabd-3f22-427a-9b13-b79b1ba03948}" symbol="2" label="uebrige_befestigte"/>
-      <rule filter="&quot;art_txt&quot; = 'Flugplatz'" key="{0b77290e-65d3-4719-9762-a612957e6950}" symbol="3" label="Flugplatz"/>
-      <rule filter="&quot;art_txt&quot; = 'Trottoir'" key="{00e98355-cb9d-4f46-b8be-40d35d396b57}" symbol="4" label="Trottoir"/>
-      <rule filter="&quot;art_txt&quot; = 'stehendes Gewaesser'" key="{e9bfde7d-df40-4a40-b6c1-d6dfd51521ba}" symbol="5" label="Gewaesser_stehendes"/>
-      <rule filter="&quot;art_txt&quot; = 'fliessendes Gewaesser'" key="{35e34a34-2a4e-4d09-91ef-ddbdfb1463c1}" symbol="6" label="Gewaesser_fliessendes"/>
-      <rule filter="&quot;art_txt&quot; = 'Wasserbecken'" key="{0b4ff262-b207-4e97-b57d-60b34bc7aa90}" symbol="7" label="Wasserbecken"/>
-      <rule filter="&quot;art_txt&quot; = 'Reben'" key="{e56d45c1-0ae2-44ae-80ea-b4de4490c50e}" label="Reben">
-        <rule scalemaxdenom="300" key="{08581874-8b17-4310-bf90-38f8d23c775b}" symbol="8" scalemindenom="1" label="1:250"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'uebrige_befestigte'" key="{458ceabd-3f22-427a-9b13-b79b1ba03948}" symbol="2" label="uebrige_befestigte"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Flugplatz'" key="{0b77290e-65d3-4719-9762-a612957e6950}" symbol="3" label="Flugplatz"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Trottoir'" key="{00e98355-cb9d-4f46-b8be-40d35d396b57}" symbol="4" label="Trottoir"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'stehendes Gewaesser'" key="{e9bfde7d-df40-4a40-b6c1-d6dfd51521ba}" symbol="5" scalemindenom="1" label="Gewaesser_stehendes"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'fliessendes Gewaesser'" key="{35e34a34-2a4e-4d09-91ef-ddbdfb1463c1}" symbol="6" scalemindenom="1" label="Gewaesser_fliessendes"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Wasserbecken'" key="{0b4ff262-b207-4e97-b57d-60b34bc7aa90}" symbol="7" label="Wasserbecken"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Reben'" key="{e56d45c1-0ae2-44ae-80ea-b4de4490c50e}" label="Reben">
+        <rule scalemaxdenom="300" key="{08581874-8b17-4310-bf90-38f8d23c775b}" symbol="8" scalemindenom="300" label="1:250"/>
         <rule scalemaxdenom="750" key="{c05a3e29-1c53-49bf-99aa-1fce26b6f558}" symbol="9" scalemindenom="300" label="1:500"/>
         <rule scalemaxdenom="1250" key="{c442ef8c-ca4e-477d-994a-e2df07da3200}" symbol="10" scalemindenom="750" label="1:1000"/>
         <rule scalemaxdenom="3000" key="{53db1a6b-6805-484a-8a24-4a0763069c9a}" symbol="11" scalemindenom="1250" label="1:2000"/>
         <rule scalemaxdenom="6000" key="{369d626a-b25f-4164-8905-d831430a61c0}" symbol="12" scalemindenom="3000" label="1:5000"/>
       </rule>
-      <rule filter="&quot;art_txt&quot;  = 'Hoch_Flachmoor'" key="{db1926ec-3332-4bd1-b733-6ed501ee8362}" label="Moor">
-        <rule scalemaxdenom="300" key="{72870906-0c4e-429c-b4e1-311192dac096}" symbol="13" scalemindenom="1" label="1:250"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot;  = 'Hoch_Flachmoor'" key="{db1926ec-3332-4bd1-b733-6ed501ee8362}" label="Moor">
+        <rule scalemaxdenom="300" key="{72870906-0c4e-429c-b4e1-311192dac096}" symbol="13" label="1:250"/>
         <rule scalemaxdenom="750" key="{dffba891-0954-4baa-9d6a-3ca1f45212f2}" symbol="14" scalemindenom="300" label="1:500"/>
         <rule scalemaxdenom="1250" key="{c36ac685-42f7-4d33-987a-aebd7de6846c}" symbol="15" scalemindenom="750" label="1:1000"/>
         <rule scalemaxdenom="3000" key="{9ef1cd79-f8f7-40eb-8826-ae9758f2c691}" symbol="16" scalemindenom="1250" label="1:2000"/>
         <rule scalemaxdenom="6000" key="{e2c05324-ed9b-476c-8ee3-258a5d3f0fcf}" symbol="17" scalemindenom="3000" label="1:5000"/>
       </rule>
-      <rule filter="&quot;art_txt&quot; = 'Schilfguertel'" key="{d1afa824-0771-4029-91bd-7f9d2ab551a3}" label="Schilfguertel">
-        <rule scalemaxdenom="300" key="{4588b59a-bfa3-476e-8b28-d450cd634c00}" symbol="18" scalemindenom="1" label="1:250"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Schilfguertel'" key="{d1afa824-0771-4029-91bd-7f9d2ab551a3}" label="Schilfguertel">
+        <rule scalemaxdenom="300" key="{4588b59a-bfa3-476e-8b28-d450cd634c00}" symbol="18" label="1:250"/>
         <rule scalemaxdenom="750" key="{3c1a6940-4b0f-4a6d-a8e9-67554370cdb5}" symbol="19" scalemindenom="300" label="1:500"/>
         <rule scalemaxdenom="1250" key="{57817a0d-4136-43a9-9296-b3214817c837}" symbol="20" scalemindenom="750" label="1:1000"/>
         <rule scalemaxdenom="3000" key="{972b4572-b7c2-4969-bf16-3d8676ce9816}" symbol="21" scalemindenom="1250" label="1:2000"/>
         <rule scalemaxdenom="6000" key="{1b27864a-c9a8-41f3-8ad6-af1359694770}" symbol="22" scalemindenom="3000" label="1:5000"/>
       </rule>
       <rule filter="&quot;art_txt&quot; = 'geschlossener_Wald'" key="{c1a022fc-e0b2-4bf8-9b0c-3436c69119cb}" symbol="23" label="geschlossener_Wald"/>
-      <rule filter="&quot;art_txt&quot; = 'uebrige_bestockte'" key="{50bc4589-ca02-4b49-b2f4-6d65aec3d4cc}" label="uebrige_bestockte">
-        <rule scalemaxdenom="300" key="{f2e049d2-afaa-4637-bf9a-b65f0ffa249a}" symbol="24" scalemindenom="1" label="1:250"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'uebrige_bestockte'" key="{50bc4589-ca02-4b49-b2f4-6d65aec3d4cc}" label="uebrige_bestockte">
+        <rule scalemaxdenom="300" key="{f2e049d2-afaa-4637-bf9a-b65f0ffa249a}" symbol="24" label="1:250"/>
         <rule scalemaxdenom="750" key="{b1344c22-f54e-4f05-8414-5ed54eccbc8c}" symbol="25" scalemindenom="300" label="1:500"/>
         <rule scalemaxdenom="1250" key="{87ded360-1d27-42ff-b9ca-b6a21e85b57b}" symbol="26" scalemindenom="750" label="1:1000"/>
         <rule scalemaxdenom="3000" key="{8cde9908-2549-4473-9732-dcd74bbc8527}" symbol="27" scalemindenom="1250" label="1:2000"/>
         <rule scalemaxdenom="6000" key="{bcda8ca5-e152-4ef1-9128-a0b0fdbf8fde}" symbol="28" scalemindenom="3000" label="1:5000"/>
       </rule>
-      <rule filter="&quot;art_txt&quot; = 'Fels'" key="{94a7e880-1e92-4831-9c42-0727b30cad39}" label="Fels">
-        <rule scalemaxdenom="300" key="{39931d57-4c6f-4ba0-b7bc-2ab59df33e43}" symbol="29" scalemindenom="1" label="1:250"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Fels'" key="{94a7e880-1e92-4831-9c42-0727b30cad39}" label="Fels">
+        <rule scalemaxdenom="300" key="{39931d57-4c6f-4ba0-b7bc-2ab59df33e43}" symbol="29" label="1:250"/>
         <rule scalemaxdenom="750" key="{3986d3a2-bc3d-4a5f-9a45-d0c0539932dd}" symbol="30" scalemindenom="300" label="1:500"/>
         <rule scalemaxdenom="1250" key="{7c2172f1-69cf-4b0d-8e0f-7d8a2132ad83}" symbol="31" scalemindenom="750" label="1:1000"/>
         <rule scalemaxdenom="3000" key="{6ca13c49-f2be-4d13-84d7-dabb8cfba4ae}" symbol="32" scalemindenom="1250" label="1:2000"/>
         <rule scalemaxdenom="6000" key="{00823811-992e-4bf7-8125-86496cbfa5cd}" symbol="33" scalemindenom="3000" label="1:5000"/>
       </rule>
-      <rule filter="&quot;art_txt&quot; = 'Geroell_Sand'" key="{34d0c41c-1600-47bf-8543-7b1805187e5f}" label="Geröll_Sand">
-        <rule scalemaxdenom="300" key="{f35ac7b3-3c7f-4633-bc00-11386f98f0f3}" symbol="34" scalemindenom="1" label="1:250"/>
+      <rule scalemaxdenom="6000" filter="&quot;art_txt&quot; = 'Geroell_Sand'" key="{34d0c41c-1600-47bf-8543-7b1805187e5f}" label="Geröll_Sand">
+        <rule scalemaxdenom="300" key="{f35ac7b3-3c7f-4633-bc00-11386f98f0f3}" symbol="34" label="1:250"/>
         <rule scalemaxdenom="750" key="{0c9aa59b-642e-48a1-b7e9-6700b3c5d61b}" symbol="35" scalemindenom="300" label="1:500"/>
         <rule scalemaxdenom="1250" key="{0590d993-7147-4e33-b726-538440b86c4f}" symbol="36" scalemindenom="750" label="1:1000"/>
         <rule scalemaxdenom="3000" key="{af50c55b-20c4-4227-94bc-cd59f2619baa}" symbol="37" scalemindenom="1250" label="1:2000"/>
@@ -2022,7 +2022,7 @@
   <editform>/var/www/maps/qgis-server-projekte/grundbuchplan</editform>
   <editforminit/>
   <editforminitcodesource>0</editforminitcodesource>
-  <editforminitfilepath>.</editforminitfilepath>
+  <editforminitfilepath>/vagrant</editforminitfilepath>
   <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
