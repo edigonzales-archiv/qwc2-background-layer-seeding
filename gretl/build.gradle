@@ -145,8 +145,9 @@ task copyDataFromGrundbuchplan(type: Db2Db) {
     ]
 }
 
-task deploy {
+task downloadBlackWhiteCaches() {
     group = SEEDING_GROUP
+    description = "Lädt die Caches der Hintergrundkarte (schwarz-weiss) herunter."
 
     doLast {
         ssh.run {
@@ -154,6 +155,21 @@ task deploy {
                 execute('uname -a') { result ->
                     println result
                 }
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-0-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-1-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-2-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-3-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-4-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-5-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-6-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-7-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-8-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-9-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-10-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-11-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-12-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-13-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                //get from: '/tiles/ch.so.agi.hintergrundkarte_sw-14-2056.db', into: '/Users/stefan/Downloads/tiles/'
             }
         }
     }
