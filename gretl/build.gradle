@@ -4,27 +4,29 @@ buildscript {
         mavenCentral()
         jcenter()
         mavenLocal() 
-        maven { url 'http://jars.interlis.ch' }   
+        maven { url 'http://jars.interlis.ch' }  
+        maven { url "https://plugins.gradle.org/m2/" } 
     }
     dependencies {
         classpath 'ch.so.agi:gretl:1.0.+'
+        classpath "org.hidetake:gradle-ssh-plugin:2.9.0"
     }
     ext {
-        //dbUriPub = "jdbc:postgresql://geodb_brw.verw.rootso.org:5432/pub"
-        //dbUserPub = "bjsvwzie" 
-        //dbPwdPub = System.env.dbPwdPub // bindestrich...
+        dbUriPub = "jdbc:postgresql://geodb_brw.verw.rootso.org:5432/pub"
+        dbUserPub = "bjsvwzie" 
+        dbPwdPub = System.env.dbPwdPub // bindestrich...
 
         //dbUriPub = "jdbc:postgresql://geodb-dev.cgjofbdf5rqg.eu-central-1.rds.amazonaws.com:5432/xanadu2"
         //dbUserPub = "stefan" 
         //dbPwdPub = System.env.dbPwdPub 
 
-        dbUriPub = "jdbc:postgresql://192.168.50.6:5432/pub"
-        dbUserPub = "ddluser" 
-        dbPwdPub = "ddluser"
+        //dbUriPub = "jdbc:postgresql://192.168.50.6:5432/pub"
+        //dbUserPub = "ddluser" 
+        //dbPwdPub = "ddluser"
         
-        //dbUriVagrant = "jdbc:postgresql://192.168.50.6:5432/pub"
+        dbUriVagrant = "jdbc:postgresql://192.168.50.6:5432/pub"
         //dbUriVagrant = "jdbc:postgresql://159.69.8.22:5432/pub"
-        dbUriVagrant = "jdbc:postgresql://159.100.250.80:5432/pub"
+        //dbUriVagrant = "jdbc:postgresql://159.100.250.80:5432/pub"
         dbUserVagrant = "ddluser" 
         dbPwdVagrant = "ddluser"
 
@@ -38,15 +40,25 @@ import ch.so.agi.gretl.api.*
 import ch.so.agi.gretl.tasks.*
 
 apply plugin: 'ch.so.agi.gretl'
+apply plugin: "org.hidetake.ssh"
 
-def GRETL_GROUP = "Gretl"
+remotes {
+    seedingServer {
+        host = "159.69.8.22"
+        user = "root"
+        identity = file(System.getProperty("user.home") + '/.ssh/id_rsa')
+    }
+}
+
+def LAND_REGISTER_GROUP = "Import/Update amtliche Vermessung"
+def SEEDING_GROUP = "WMTS Cache Seeding"
 
 def dbSchemaMOpublic = "agi_mopublic_pub"
 def dbSchemaHoheitsgrenzen = "agi_hoheitsgrenzen_pub"
 def dbSchemaGrundbuchplan = "agi_grundbuchplan_pub"
 
 task createMOpublicSchema(type: Ili2pgImportSchema) {
-    group = GRETL_GROUP
+    group = LAND_REGISTER_GROUP
     description = "Erstellt MOpublic-Schema."
 
     database = [dbUriVagrant, dbUserVagrant, dbPwdVagrant]
@@ -63,7 +75,7 @@ task createMOpublicSchema(type: Ili2pgImportSchema) {
 }
 
 task copyDataFromMOpublic(type: Db2Db) {
-    group = GRETL_GROUP
+    group = LAND_REGISTER_GROUP
     description = "Kopiert Daten vom MOpublic-Schema."
     
     sourceDb = [dbUriPub, dbUserPub, dbPwdPub]
@@ -93,7 +105,7 @@ task copyDataFromMOpublic(type: Db2Db) {
 }
 
 task createHoheitsgrenzenSchema(type: SqlExecutor) {
-    group = GRETL_GROUP
+    group = LAND_REGISTER_GROUP
     description = "Erstellt Hoheitsgrenzen-Schema und Kantonsgrenze-Tabelle."
 
     database = [dbUriVagrant, dbUserVagrant, dbPwdVagrant]
@@ -101,7 +113,7 @@ task createHoheitsgrenzenSchema(type: SqlExecutor) {
 }    
 
 task copyDataFromHoheitsgrenzen(type: Db2Db) {
-    group = GRETL_GROUP
+    group = LAND_REGISTER_GROUP
     description = "Kopiert Daten vom Hoheitsgrenzen-Schema."
     
     sourceDb = [dbUriPub, dbUserPub, dbPwdPub]
@@ -112,7 +124,7 @@ task copyDataFromHoheitsgrenzen(type: Db2Db) {
 }
 
 task createGrundbuchplanSchema(type: SqlExecutor) {
-    group = GRETL_GROUP
+    group = LAND_REGISTER_GROUP
     description = "Erstellt Grundbuchplan-Schema und -Tabellen."
 
     database = [dbUriVagrant, dbUserVagrant, dbPwdVagrant]
@@ -120,7 +132,7 @@ task createGrundbuchplanSchema(type: SqlExecutor) {
 } 
 
 task copyDataFromGrundbuchplan(type: Db2Db) {
-    group = GRETL_GROUP
+    group = LAND_REGISTER_GROUP
     description = "Kopiert Daten vom Hoheitsgrenzen-Schema."
     
     sourceDb = [dbUriPub, dbUserPub, dbPwdPub]
@@ -131,4 +143,18 @@ task copyDataFromGrundbuchplan(type: Db2Db) {
             new TransferSet("sql/liegenschaften_grundstueckpos.sql", "agi_grundbuchplan_pub.liegenschaften_grundstueckpos", true),      
             new TransferSet("sql/liegenschaften_liegenschaft.sql", "agi_grundbuchplan_pub.liegenschaften_liegenschaft", true)      
     ]
+}
+
+task deploy {
+    group = SEEDING_GROUP
+
+    doLast {
+        ssh.run {
+            session(remotes.seedingServer) {
+                execute('uname -a') { result ->
+                    println result
+                }
+            }
+        }
+    }
 }

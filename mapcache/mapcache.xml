@@ -89,7 +89,7 @@
       <cache>sqlite</cache>
       <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>      
       <format>myjpeg</format>
-      <metatile>4 4</metatile>
+      <metatile>8 8</metatile>
       <metabuffer>0</metabuffer>
       <expires>25200</expires>
       <auto_expire>31536000</auto_expire>

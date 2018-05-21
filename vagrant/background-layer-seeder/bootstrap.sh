@@ -5,7 +5,7 @@ dpkg-reconfigure --frontend noninteractive tzdata
 echo 'deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main' >> /etc/apt/sources.list.d/pgdg.list
 wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -    
 apt-get update
-apt-get install -y xfce4 xfce4-whiskermenu-plugin xfce4-terminal thunar-archive-plugin
+apt-get install -y xfce4 xfce4-whiskermenu-plugin xfce4-terminal thunar-archive-plugin gedit
 apt-get install -y x2goserver x2goserver-xsession
 apt-get install -y apache2 libapache2-mod-fcgid
 apt-get install -y qgis python-qgis qgis-plugin-grass qgis-server
@@ -28,11 +28,12 @@ cp /opt/qwc2-background-layer-seeding/apache/000-default.conf /etc/apache2/sites
 cp /opt/qwc2-background-layer-seeding/apache/fcgid.conf /etc/apache2/mods-available/fcgid.conf
 cp /opt/qwc2-background-layer-seeding/mapcache/mapcache.xml /opt/mapcache/
 cp /opt/qwc2-background-layer-seeding/maske/maske.gpkg /vagrant/
-service apache2 restart
 unzip -d /usr/share/fonts/truetype/ /opt/qwc2-background-layer-seeding/fonts/Cadastra.zip
 fc-cache -f -v
 unzip -d /usr/share/qgis/svg/ /opt/qwc2-background-layer-seeding/symbols/grundbuchplan.zip
-chmod +r /usr/share/qgis/svg/*.svg    
+chmod +r /usr/share/qgis/svg/*.svg   
+service apache2 restart
+cp /opt/qwc2-background-layer-seeding/bash/.profile /root/.profile
 apt-get install -y postgresql-10 
 apt-get install -y postgresql-client-10
 apt-get install -y postgresql-10-postgis-2.4
