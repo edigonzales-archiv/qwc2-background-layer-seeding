@@ -30,6 +30,8 @@ cp /opt/qwc2-background-layer-seeding/apache/fcgid.conf /etc/apache2/mods-availa
 cp /opt/qwc2-background-layer-seeding/mapcache/mapcache.xml /opt/mapcache/
 cp /opt/qwc2-background-layer-seeding/mapcache/wmts-seeding-geom.gpkg /opt/mapcache/
 chown www-data:www-data -R /opt/mapcache/
+cp /opt/qwc2-background-layer-seeding/qgis/qgs/*.qgs /opt/qgis/
+chown www-data:www-data -R /opt/qgis/
 cp /opt/qwc2-background-layer-seeding/maske/maske.gpkg /vagrant/
 unzip -d /usr/share/fonts/truetype/ /opt/qwc2-background-layer-seeding/fonts/Cadastra.zip
 fc-cache -f -v
