@@ -16,17 +16,20 @@ apt-get install -y ifupdown
 apt-get install -y fonts-liberation
 apt-get install -y git
 apt-get install -y unzip
-mkdir -p /opt/geodata/
 mkdir -p /vagrant/
+mkdir -p /opt/geodata/
 mkdir -p /opt/mapcache/
+mkdir -p /opt/qgis/
 mkdir -p /tiles
 chown www-data:www-data -R /tiles
-chmod 7777 -R /tiles
+#chmod 7777 -R /tiles
 git clone https://github.com/edigonzales/qwc2-background-layer-seeding.git /opt/qwc2-background-layer-seeding
 chmod +rx -R /opt/qwc2-background-layer-seeding
 cp /opt/qwc2-background-layer-seeding/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 cp /opt/qwc2-background-layer-seeding/apache/fcgid.conf /etc/apache2/mods-available/fcgid.conf
 cp /opt/qwc2-background-layer-seeding/mapcache/mapcache.xml /opt/mapcache/
+cp /opt/qwc2-background-layer-seeding/mapcache/wmts-seeding-geom.gpkg /opt/mapcache/
+chown www-data:www-data -R /opt/mapcache/
 cp /opt/qwc2-background-layer-seeding/maske/maske.gpkg /vagrant/
 unzip -d /usr/share/fonts/truetype/ /opt/qwc2-background-layer-seeding/fonts/Cadastra.zip
 fc-cache -f -v
