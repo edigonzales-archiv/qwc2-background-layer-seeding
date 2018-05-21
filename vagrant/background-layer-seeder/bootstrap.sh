@@ -33,9 +33,9 @@ chown www-data:www-data -R /opt/mapcache/
 cp /opt/qwc2-background-layer-seeding/qgis/qgs/*.qgs /opt/qgis/
 chown www-data:www-data -R /opt/qgis/
 cp /opt/qwc2-background-layer-seeding/maske/maske.gpkg /vagrant/
-unzip -d /usr/share/fonts/truetype/ /opt/qwc2-background-layer-seeding/fonts/Cadastra.zip
+unzip -d /usr/share/fonts/truetype/ /opt/qwc2-background-layer-seeding/qgis/fonts/Cadastra.zip
 fc-cache -f -v
-unzip -d /usr/share/qgis/svg/ /opt/qwc2-background-layer-seeding/symbols/grundbuchplan.zip
+unzip -d /usr/share/qgis/svg/ /opt/qwc2-background-layer-seeding/qgis/symbols/grundbuchplan.zip
 chmod +r /usr/share/qgis/svg/*.svg   
 service apache2 restart
 cp /opt/qwc2-background-layer-seeding/bash/.profile /root/.profile
