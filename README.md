@@ -29,3 +29,6 @@ seeded 316 metatiles (20224 total tiles, 20224 non-empty tiles) in 571.4 seconds
 sudo su - www-data -s /bin/bash -c 'mapcache_seed -c /opt/mapcache/mapcache.xml -f -g 2056 -t ch.so.agi.hintergrundkarte_farbig -z 11,14 -n 4 -d /opt/qwc2-background-layer-seeding/mapcache/wmts-seeding-geom.gpkg -l kanton500m'
 seeded 2203392 tiles, now at z14 x1216 y2152                                                   
 seeded 34430 metatiles (2203520 total tiles, 2203520 non-empty tiles) in 10848.8 seconds at 203.1 tiles/sec (203.1 non-empty tiles/sec)
+
+
+sudo su - www-data -s /bin/bash -c 'mapcache_seed -c /opt/mapcache/mapcache.xml -f -g 2056 -t ch.so.agi.hintergrundkarte_ortho -z 0,10 -n 4'

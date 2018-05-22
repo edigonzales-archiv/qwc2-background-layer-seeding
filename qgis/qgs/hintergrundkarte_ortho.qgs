@@ -7,7 +7,7 @@
     <customproperties/>
     <layer-tree-group expanded="1" checked="Qt::Checked" name="hintergrundkarte_ortho">
       <customproperties/>
-      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="maske20180521085037348" source="/vagrant/maske.gpkg" name="maske">
+      <layer-tree-layer expanded="1" providerKey="ogr" checked="Qt::Checked" id="maske20180522135212429" source="/vagrant/maske.gpkg" name="maske">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer expanded="0" providerKey="postgres" checked="Qt::Checked" id="hoheitsgrenzen_kantonsgrenze20180518060059902" source="dbname='pub' host=localhost port=5432 user='ddluser' sslmode=disable key='t_id' srid=2056 type=MultiPolygon table=&quot;agi_hoheitsgrenzen_pub&quot;.&quot;hoheitsgrenzen_kantonsgrenze&quot; (geometrie) sql=" name="hoheitsgrenzen_kantonsgrenze">
@@ -40,10 +40,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>2534057.83924737898632884</xmin>
-      <ymin>1160324.4959212641697377</ymin>
-      <xmax>2703262.62575262086465955</xmax>
-      <ymax>1314708.87107873545028269</ymax>
+      <xmin>2567575</xmin>
+      <ymin>1206500</ymin>
+      <xmax>2669425</xmax>
+      <ymax>1269500</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>0</projections>
@@ -72,14 +72,14 @@
       <item>orthofoto_2017_rgb_12_5cm20180518082322645</item>
       <item>orthofoto_2015_rgb_12_5cm20180518082438387</item>
       <item>orthofoto_2015_rgb_5m20180518082438457</item>
-      <item>maske20180521085037348</item>
+      <item>maske20180522135212429</item>
     </custom-order>
   </layer-tree-canvas>
   <legend updateDrawingOrder="true">
     <legendgroup open="true" checked="Qt::Checked" name="hintergrundkarte_ortho">
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="maske" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="maske20180521085037348" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="maske20180522135212429" visible="1"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" open="false" checked="Qt::Checked" name="hoheitsgrenzen_kantonsgrenze" showFeatureCount="0">
@@ -125,7 +125,7 @@
     </legendgroup>
   </legend>
   <projectlayers>
-    <maplayer minimumScale="190000" maximumScale="4e+06" type="raster" hasScaleBasedVisibilityFlag="1">
+    <maplayer minimumScale="150000" maximumScale="4e+06" type="raster" hasScaleBasedVisibilityFlag="1">
       <extent>
         <xmin>2460000</xmin>
         <ymin>1044000</ymin>
@@ -169,7 +169,7 @@
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="-15"/>
         <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-        <rasterresampler maxOversampling="4" zoomedOutResampler="bilinear"/>
+        <rasterresampler maxOversampling="4" zoomedOutResampler="bilinear" zoomedInResampler="bilinear"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
@@ -252,7 +252,7 @@
                 <prop k="joinstyle" v="bevel"/>
                 <prop k="line_color" v="255,255,255,167"/>
                 <prop k="line_style" v="solid"/>
-                <prop k="line_width" v="3"/>
+                <prop k="line_width" v="2"/>
                 <prop k="line_width_unit" v="MM"/>
                 <prop k="offset" v="0"/>
                 <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
@@ -498,7 +498,7 @@
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform>/vagrant</annotationform>
+      <annotationform>/opt/qwc2-background-layer-seeding/qgis/qgs</annotationform>
       <aliases>
         <alias field="t_id" index="0" name=""/>
         <alias field="t_ili_tid" index="1" name=""/>
@@ -519,10 +519,10 @@
           <column width="-1" hidden="0" type="field" name="kantonsnummer"/>
         </columns>
       </attributetableconfig>
-      <editform>/vagrant</editform>
+      <editform>/opt/qwc2-background-layer-seeding/qgis/qgs</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath>/vagrant</editforminitfilepath>
+      <editforminitfilepath>/opt/qwc2-background-layer-seeding/qgis/qgs</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -557,7 +557,13 @@ def my_form_open(dialog, layer, feature):
       <previewExpression></previewExpression>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
-      <id>maske20180521085037348</id>
+      <extent>
+        <xmin>2570000</xmin>
+        <ymin>1208000</ymin>
+        <xmax>2667000</xmax>
+        <ymax>1268000</ymax>
+      </extent>
+      <id>maske20180522135212429</id>
       <datasource>/vagrant/maske.gpkg</datasource>
       <keywordList>
         <value></value>
@@ -785,7 +791,6 @@ def my_form_open(dialog, layer, feature):
       <SingleCategoryDiagramRenderer diagramType="Histogram" sizeLegend="0" attributeLegend="1">
         <DiagramCategory penColor="#000000" labelPlacementMethod="XHeight" penWidth="0" diagramOrientation="Up" sizeScale="0,0,0,0,0,0" minimumSize="0" barWidth="5" penAlpha="255" maxScaleDenominator="1e+08" backgroundColor="#ffffff" transparency="0" width="15" scaleDependency="Area" backgroundAlpha="255" angleOffset="1440" scaleBasedVisibility="0" enabled="0" height="15" lineSizeScale="0,0,0,0,0,0" sizeType="MM" lineSizeType="MM" minScaleDenominator="inf">
           <fontProperties description="Sans Serif,9,-1,5,50,0,0,0,0,0" style=""/>
-          <attribute field="" color="#000000" label=""/>
         </DiagramCategory>
         <symbol alpha="1" clip_to_extent="1" type="marker" name="sizeSymbol">
           <layer pass="0" class="SimpleMarker" locked="0">
@@ -811,7 +816,7 @@ def my_form_open(dialog, layer, feature):
         </symbol>
       </SingleCategoryDiagramRenderer>
       <DiagramLayerSettings yPosColumn="-1" showColumn="-1" linePlacementFlags="10" placement="0" dist="0" xPosColumn="-1" priority="0" obstacle="0" zIndex="0" showAll="1"/>
-      <annotationform></annotationform>
+      <annotationform>/opt/qwc2-background-layer-seeding/qgis/qgs</annotationform>
       <aliases>
         <alias field="fid" index="0" name=""/>
         <alias field="dummy" index="1" name=""/>
@@ -826,10 +831,10 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="1" type="actions"/>
         </columns>
       </attributetableconfig>
-      <editform></editform>
+      <editform>/opt/qwc2-background-layer-seeding/qgis/qgs</editform>
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
+      <editforminitfilepath>/opt/qwc2-background-layer-seeding/qgis/qgs</editforminitfilepath>
       <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
 """
 QGIS forms can have a Python function that is called when the form is
@@ -909,7 +914,7 @@ def my_form_open(dialog, layer, feature):
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minimumScale="1" maximumScale="189999" type="raster" hasScaleBasedVisibilityFlag="1">
+    <maplayer minimumScale="17999" maximumScale="149999" type="raster" hasScaleBasedVisibilityFlag="1">
       <extent>
         <xmin>2591000</xmin>
         <ymin>1243000</ymin>
@@ -1006,7 +1011,7 @@ def my_form_open(dialog, layer, feature):
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minimumScale="17999" maximumScale="189999" type="raster" hasScaleBasedVisibilityFlag="1">
+    <maplayer minimumScale="17999" maximumScale="149999" type="raster" hasScaleBasedVisibilityFlag="1">
       <extent>
         <xmin>2592000</xmin>
         <ymin>1213000</ymin>
@@ -1104,7 +1109,7 @@ def my_form_open(dialog, layer, feature):
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer minimumScale="18000" maximumScale="189999" type="raster" hasScaleBasedVisibilityFlag="1">
+    <maplayer minimumScale="18000" maximumScale="149999" type="raster" hasScaleBasedVisibilityFlag="1">
       <extent>
         <xmin>2618000</xmin>
         <ymin>1233000</ymin>

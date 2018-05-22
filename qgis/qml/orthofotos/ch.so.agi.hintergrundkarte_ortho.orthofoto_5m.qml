@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.18.17" minimumScale="18000" maximumScale="189999" hasScaleBasedVisibilityFlag="1">
+<qgis version="2.18.17" minimumScale="18000" maximumScale="149999" hasScaleBasedVisibilityFlag="1">
   <pipe>
     <rasterrenderer opacity="1" alphaBand="4" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
       <rasterTransparency/>
