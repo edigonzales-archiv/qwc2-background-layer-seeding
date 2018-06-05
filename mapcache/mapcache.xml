@@ -13,7 +13,6 @@
     <!--eCH-0056 v2 ? / bisher -->
     <!--<resolutions>4000,3750,3500,3250,3000,2750,2500,2250,2000,1750,1500,1250,1000,750,650,500,250,100,50,20,10,5,2.5,2,1.5,1,0.5,0.25,0.1</resolutions>-->
     <!--eCH-0056 v3-->
-    <!--0.05 will not be seeded-->
     <resolutions>4000,2000,1000,500,250,100,50,20,10,5,2.5,1,0.5,0.25,0.1,0.05</resolutions>
     <size>256 256</size>
   </grid>
@@ -43,7 +42,17 @@
   
    <format name="myjpeg" type ="JPEG">
       <quality>80</quality>  
-      <photometric>YCBCR</photometric>   <!-- RGB | YCBCR -->
+      <photometric>YCBCR</photometric>   
+   </format>
+
+   <format name="jpeg60" type ="JPEG">
+      <quality>60</quality>  
+      <photometric>YCBCR</photometric>    
+   </format>
+
+   <format name="mypng" type="PNG">
+      <compression>fast</compression>
+      <colors>256</colors>
    </format>
 
   <source name="ch.so.agi.hintergrundkarte_ortho" type="wms">
@@ -54,7 +63,7 @@
          </params>
       </getmap>
       <http>
-         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qgis/hintergrundkarte_ortho.qgs</url>
+         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qwc2-background-layer-seeding/qgis/qgs/hintergrundkarte_ortho.qgs</url>
          <connection_timeout>60</connection_timeout>         
       </http>
    </source>
@@ -67,7 +76,7 @@
          </params>
       </getmap>
       <http>
-         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qgis/hintergrundkarte_farbig.qgs</url>
+         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qwc2-background-layer-seeding/qgis/qgs/hintergrundkarte_farbig.qgs</url>
          <connection_timeout>60</connection_timeout>         
       </http>
    </source>
@@ -80,7 +89,33 @@
          </params>
       </getmap>
       <http>
-         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qgis/hintergrundkarte_sw.qgs</url>
+         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qwc2-background-layer-seeding/qgis/qgs/hintergrundkarte_sw.qgs</url>
+         <connection_timeout>60</connection_timeout>         
+      </http>
+   </source>
+
+  <source name="ch.so.agi.lidar_2014.dom_relief" type="wms">
+      <getmap>
+         <params>
+            <FORMAT>image/png</FORMAT>
+            <LAYERS>lidar_2014_dom_relief</LAYERS>
+         </params>
+      </getmap>
+      <http>
+         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qwc2-background-layer-seeding/qgis/qgs/ch.so.agi.lidar_2014.dom_relief.qgs</url>
+         <connection_timeout>60</connection_timeout>         
+      </http>
+   </source>
+
+  <source name="ch.so.agi.lidar_2014.dtm_relief" type="wms">
+      <getmap>
+         <params>
+            <FORMAT>image/png</FORMAT>
+            <LAYERS>lidar_2014_dtm_relief</LAYERS>
+         </params>
+      </getmap>
+      <http>
+         <url>http://localhost/cgi-bin/qgis_mapserv.fcgi?map=/opt/qwc2-background-layer-seeding/qgis/qgs/ch.so.agi.lidar_2014.dtm_relief.qgs</url>
          <connection_timeout>60</connection_timeout>         
       </http>
    </source>
@@ -118,8 +153,31 @@
       <auto_expire>31536000</auto_expire>
    </tileset> 
 
+<!--
+   <tileset name="ch.so.agi.lidar_2014.dom_relief">
+      <source>ch.so.agi.lidar_2014.dom_relief</source>
+      <cache>sqlite</cache>
+      <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>      
+      <format>jpeg60</format>
+      <metatile>8 8</metatile>
+      <metabuffer>20</metabuffer>
+      <expires>25200</expires>
+      <auto_expire>31536000</auto_expire>
+   </tileset> 
+-->
+   <tileset name="ch.so.agi.lidar_2014.dtm_relief">
+      <source>ch.so.agi.lidar_2014.dtm_relief</source>
+      <cache>sqlite</cache>
+      <grid restricted_extent="2570000,1208000,2667000,1268000">2056</grid>      
+      <format>jpeg60</format>
+      <metatile>8 8</metatile>
+      <metabuffer>20</metabuffer>
+      <expires>25200</expires>
+      <auto_expire>31536000</auto_expire>
+   </tileset> 
+
   <default_format>JPEG</default_format>
-  <service type="wms" enabled="false">
+  <service type="wms" enabled="true">
     <full_wms>assemble</full_wms>
     <resample_mode>bilinear</resample_mode>
     <format>JPEG</format>

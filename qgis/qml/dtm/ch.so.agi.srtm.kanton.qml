@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="2.18.17" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+<qgis version="2.18.17" simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="0" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
   <edittypes>
     <edittype widgetv2type="TextEdit" name="t_id">
       <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
@@ -22,7 +22,7 @@
       <rules key="{de2768ff-ea4d-4503-aa80-b67d67c9d8b4}">
         <rule scalemaxdenom="1000000" key="{76d24b68-698d-427c-ad8a-7b7ff8b037f3}" symbol="0" scalemindenom="50000"/>
         <rule scalemaxdenom="49999" key="{f034baa4-1e4a-4f55-a12a-c13673b47c47}" symbol="1" scalemindenom="1"/>
-        <rule scalemaxdenom="4000000" checkstate="0" key="{367d8915-7ef8-4ed7-8709-a55518081257}" symbol="2" scalemindenom="1000000"/>
+        <rule scalemaxdenom="4000000" key="{367d8915-7ef8-4ed7-8709-a55518081257}" symbol="2" scalemindenom="1000000"/>
       </rules>
       <symbols>
         <symbol alpha="1" clip_to_extent="1" type="fill" name="0">
