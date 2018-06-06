@@ -128,7 +128,7 @@
       <metatile>8 8</metatile>
       <metabuffer>0</metabuffer>
       <expires>25200</expires>
-      <auto_expire>31536000</auto_expire>
+      <!--<auto_expire>31536000</auto_expire>-->
    </tileset>
 
    <tileset name="ch.so.agi.hintergrundkarte_farbig">
@@ -139,7 +139,7 @@
       <metatile>8 8</metatile>
       <metabuffer>20</metabuffer>
       <expires>25200</expires>
-      <auto_expire>31536000</auto_expire>
+      <!--<auto_expire>31536000</auto_expire>-->
    </tileset>   
 
    <tileset name="ch.so.agi.hintergrundkarte_sw">
@@ -150,7 +150,7 @@
       <metatile>8 8</metatile>
       <metabuffer>20</metabuffer>
       <expires>25200</expires>
-      <auto_expire>31536000</auto_expire>
+      <!--<auto_expire>31536000</auto_expire>-->
    </tileset> 
 
 <!--
@@ -173,7 +173,7 @@
       <metatile>8 8</metatile>
       <metabuffer>20</metabuffer>
       <expires>25200</expires>
-      <auto_expire>31536000</auto_expire>
+      <!--<auto_expire>31536000</auto_expire>-->
    </tileset> 
 
   <default_format>JPEG</default_format>
