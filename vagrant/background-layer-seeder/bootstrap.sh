@@ -21,7 +21,7 @@ mkdir -p /opt/geodata/
 mkdir -p /opt/mapcache/
 mkdir -p /opt/qgis/
 mkdir -p /tiles
-chown www-data:www-data -R /tiles
+#chown www-data:www-data -R /tiles
 #chmod 7777 -R /tiles
 git clone https://github.com/edigonzales/qwc2-background-layer-seeding.git /opt/qwc2-background-layer-seeding
 chmod +rx -R /opt/qwc2-background-layer-seeding
@@ -86,3 +86,4 @@ useradd -m seeder -s /bin/bash
 cp -r /root/.ssh /home/seeder/
 chown -R seeder:seeder /home/seeder/.ssh
 adduser seeder sudo
+chown seeder:seeder -R /tiles

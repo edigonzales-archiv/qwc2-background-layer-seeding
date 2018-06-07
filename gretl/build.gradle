@@ -26,6 +26,7 @@ buildscript {
         
         //dbUriVagrant = "jdbc:postgresql://192.168.50.6:5432/pub"
         dbUriVagrant = "jdbc:postgresql://159.69.8.22:5432/pub"
+        dbUriVagrant = "jdbc:postgresql://159.69.29.182:5432/pub"
         //dbUriVagrant = "jdbc:postgresql://159.100.250.80:5432/pub"
         dbUserVagrant = "ddluser" 
         dbPwdVagrant = "ddluser"
