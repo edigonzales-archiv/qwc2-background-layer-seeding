@@ -82,3 +82,7 @@ cp /opt/qwc2-background-layer-seeding/postgres/pg_hba.conf /etc/postgresql/10/ma
 sudo -u root chown postgres:postgres /etc/postgresql/10/main/postgresql.conf
 sudo -u root chown postgres:postgres /etc/postgresql/10/main/pg_hba.conf
 service postgresql start
+useradd -m seeder -s /bin/bash
+cp -r /root/.ssh /home/seeder/
+chown -R seeder:seeder /home/seeder/.ssh
+adduser seeder sudo

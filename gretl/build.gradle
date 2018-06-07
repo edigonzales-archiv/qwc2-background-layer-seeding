@@ -24,8 +24,8 @@ buildscript {
         //dbUserPub = "ddluser" 
         //dbPwdPub = "ddluser"
         
-        dbUriVagrant = "jdbc:postgresql://192.168.50.6:5432/pub"
-        //dbUriVagrant = "jdbc:postgresql://159.69.8.22:5432/pub"
+        //dbUriVagrant = "jdbc:postgresql://192.168.50.6:5432/pub"
+        dbUriVagrant = "jdbc:postgresql://159.69.8.22:5432/pub"
         //dbUriVagrant = "jdbc:postgresql://159.100.250.80:5432/pub"
         dbUserVagrant = "ddluser" 
         dbPwdVagrant = "ddluser"
@@ -143,6 +143,21 @@ task copyDataFromGrundbuchplan(type: Db2Db) {
             new TransferSet("sql/liegenschaften_grundstueckpos.sql", "agi_grundbuchplan_pub.liegenschaften_grundstueckpos", true),      
             new TransferSet("sql/liegenschaften_liegenschaft.sql", "agi_grundbuchplan_pub.liegenschaften_liegenschaft", true)      
     ]
+}
+
+
+task updateBlackWhiteCaches() {
+    group = SEEDING_GROUP
+    description = "Neuberechnen (komplett) der Grundbuchplan (sw) Kacheln."
+    doLast {
+        ssh.run {
+            session(remotes.seedingServer) {
+                execute("sudo su - www-data -s /bin/bash -c 'mapcache_seed -c /opt/mapcache/mapcache.xml -f -g 2056 -t ch.so.agi.hintergrundkarte_farbig -z 0,10 -n 4'") { result ->
+                    println result
+                }
+            }
+        }
+    }
 }
 
 task downloadBlackWhiteCaches() {
