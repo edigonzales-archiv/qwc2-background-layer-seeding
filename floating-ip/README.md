@@ -12,7 +12,7 @@ Editieren von /etc/network/interfaces:
 ```
 auto eth0
 iface eth0 inet static
-        address <Ihre IPv4 Adresse>
+        address 195.201.45.245
         netmask 255.255.255.255
         pointopoint 172.31.1.1 dev eth0
         gateway 172.31.1.1
@@ -20,12 +20,12 @@ iface eth0 inet static
 
 
 iface eth0 inet6 static
-        address <Eine IPv6 Adresse aus dem Subnetz. z.B. 2a01:4f8:0:3df1::1>
+        address <Eine IPv6 Adresse aus dem Subnetz. z.B. 2a01:4f8:1c1c:4083::1>
         netmask 64
         gateway fe80::1
 ```
 
-Die bestehende IPv6 (aus 50-cloud-init.cfg) verwenden.
+Die bestehende IPv6 (aus  `/etc/network/interfaces.d/50-cloud-init.cfg`) verwenden.
 
 Hinzufügen von /etc/cloud/cloud.cfg.d/98-disable-network.cfg:
 
@@ -39,3 +39,5 @@ Folgender Befehl muss ausgeführt werden:
 ```
 rm /etc/network/interfaces.d/50-cloud-init.cfg
 ```
+
+`sudo service networking restart`

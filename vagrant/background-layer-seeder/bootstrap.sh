@@ -28,7 +28,7 @@ chmod +rx -R /opt/qwc2-background-layer-seeding
 cp /opt/qwc2-background-layer-seeding/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 cp /opt/qwc2-background-layer-seeding/apache/fcgid.conf /etc/apache2/mods-available/fcgid.conf
 cp /opt/qwc2-background-layer-seeding/mapcache/mapcache.xml /opt/mapcache/
-cp /opt/qwc2-background-layer-seeding/mapcache/wmts-seeding-geom.gpkg /opt/mapcache/
+cp /opt/qwc2-background-layer-seeding/mapcache/wmts-seeding-geom.gpkg /tiles/
 chown www-data:www-data -R /opt/mapcache/
 cp /opt/qwc2-background-layer-seeding/qgis/qgs/*.qgs /opt/qgis/
 chown www-data:www-data -R /opt/qgis/

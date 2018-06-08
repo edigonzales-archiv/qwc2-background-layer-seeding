@@ -27,6 +27,8 @@ buildscript {
         //dbUriVagrant = "jdbc:postgresql://192.168.50.6:5432/pub"
         dbUriVagrant = "jdbc:postgresql://159.69.8.22:5432/pub"
         dbUriVagrant = "jdbc:postgresql://159.69.29.182:5432/pub"
+        dbUriVagrant = "jdbc:postgresql://159.69.30.145:5432/pub"
+        dbUriVagrant = "jdbc:postgresql://195.201.234.152:5432/pub"
         //dbUriVagrant = "jdbc:postgresql://159.100.250.80:5432/pub"
         dbUserVagrant = "ddluser" 
         dbPwdVagrant = "ddluser"
@@ -43,6 +45,7 @@ import ch.so.agi.gretl.tasks.*
 apply plugin: 'ch.so.agi.gretl'
 apply plugin: "org.hidetake.ssh"
 
+/*
 remotes {
     seedingServer {
         host = "159.69.8.22"
@@ -50,6 +53,7 @@ remotes {
         identity = file(System.getProperty("user.home") + '/.ssh/id_rsa')
     }
 }
+*/
 
 def LAND_REGISTER_GROUP = "Import/Update amtliche Vermessung"
 def SEEDING_GROUP = "WMTS Cache Seeding"
@@ -134,7 +138,7 @@ task createGrundbuchplanSchema(type: SqlExecutor) {
 
 task copyDataFromGrundbuchplan(type: Db2Db) {
     group = LAND_REGISTER_GROUP
-    description = "Kopiert Daten vom Hoheitsgrenzen-Schema."
+    description = "Kopiert Daten vom Grundbuchplan-Schema."
     
     sourceDb = [dbUriPub, dbUserPub, dbPwdPub]
     targetDb = [dbUriVagrant, dbUserVagrant, dbPwdVagrant]
@@ -146,7 +150,7 @@ task copyDataFromGrundbuchplan(type: Db2Db) {
     ]
 }
 
-
+/*
 task updateBlackWhiteCaches() {
     group = SEEDING_GROUP
     description = "Neuberechnen (komplett) der Grundbuchplan (sw) Kacheln."
@@ -185,8 +189,9 @@ task downloadBlackWhiteCaches() {
                 get from: '/tiles/ch.so.agi.hintergrundkarte_sw-11-2056.db', into: '/Users/stefan/Downloads/tiles/'
                 get from: '/tiles/ch.so.agi.hintergrundkarte_sw-12-2056.db', into: '/Users/stefan/Downloads/tiles/'
                 get from: '/tiles/ch.so.agi.hintergrundkarte_sw-13-2056.db', into: '/Users/stefan/Downloads/tiles/'
-                //get from: '/tiles/ch.so.agi.hintergrundkarte_sw-14-2056.db', into: '/Users/stefan/Downloads/tiles/'
+                get from: '/tiles/ch.so.agi.hintergrundkarte_sw-14-2056.db', into: '/Users/stefan/Downloads/tiles/'
             }
         }
     }
 }
+*/
