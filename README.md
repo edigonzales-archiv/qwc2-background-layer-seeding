@@ -53,7 +53,7 @@ Die virtuellen Server erhalten eine IP, die solange statisch bis der Server gel�
 
 Die Einstellungen, die auf dem Server zu machen sind, stehen hier: `floating-ip/README.md`.
 
-Falls das Umstellen der Floating IP nicht funktioniert, muss in der AGI-Infrastruktur im AGDI "nur" die IP in den Backgroundlayer-Definitionen angepasst werden (zweimal pro Backgroundlayer: einmal f체r den WMTS und einmal f체r den Druck-WMS).
+Falls das Umstellen der Floating IP nicht funktioniert, muss in der AGI-Infrastruktur im AGDI "nur" die IP des Backup-Servers in den Backgroundlayer-Definitionen eingetragen werden (zweimal pro Backgroundlayer: einmal f체r den WMTS und einmal f체r den Druck-WMS).
 
 Der Standby-Server wird soweit vorbereitet, dass die Caches vorhanden sind. Der Grundbuchplan wird im Falle eines Einsatzes nat체rlich nicht aktuell sein. Falls ein Cronjob (Gretl-Job) vorhanden ist, wird der Grundbuchplan maximal innerhalb eines Tages (resp. nach Ausf체hrung des Gretl-Jobs) wieder aktuell sein.
 
