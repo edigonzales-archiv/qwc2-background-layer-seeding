@@ -5,7 +5,8 @@ sudo ip addr add 195.201.45.245 dev eth0
 ```
 
 ## Dauerhaft
-siehe: https://wiki.hetzner.de/index.php/Cloud_IP_static
+
+siehe: [https://wiki.hetzner.de/index.php/Cloud_IP_static](https://wiki.hetzner.de/index.php/Cloud_IP_static)
 
 Editieren von /etc/network/interfaces:
 

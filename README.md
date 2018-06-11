@@ -66,3 +66,19 @@ TODO: Infos zum Umgang mit dem Zertifikat.
 ```
 gradle -I init.gradle -PdbUriPub=jdbc:postgresql://geodb_brw.verw.rootso.org:5432/pub -PdbUserPub=bjsvwzie -PdbPwdPub=XXXXXXXXX -PdbUriHetznerWmts=jdbc:postgresql://195.201.45.245:5432/pub -PdbUserHetznerWmts=ddluser -PdbPwdHetznerWmts=XXXXXXXX -PhetznerWmtsServerIp=195.201.45.245
 ```
+
+Der definitive Aufruf sieht ein wenig komplizierter aus, da noch Credentials (SSH-Key) etc. übergeben werden müssen. 
+
+Im Gegensatz zum erstmaligen Seeden des Plane für das Grundbuch wird nicht der 1000m-Buffer der Kantonsgrenze verwendet, sondern nur die täglich neu gelieferten Gemeinden. Als Vereinfachung (um eine View oder Tabelle zu sparen) wird *immer* die letzte Lieferung (also `max(importdatum)`) geseeded:
+
+```
+ogrinfo -al PG:"host=localhost user=ddluser dbname=pub password=ddluser" -sql "SELECT t_id, ST_Buffer(geometrie, 1000) as geometrie FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze)"
+
+mapcache_seed -c /opt/mapcache/mapcache.xml -f -g 2056 -t ch.so.agi.hintergrundkarte_ortho -z 11,14 -n 4 -d PG:"host=localhost user=ddluser dbname=pub password=XXXXXX" -s "SELECT t_id, ST_Buffer(geometrie) as geometrie FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze)"
+```
+
+## Varia / Notizen
+
+ogrinfo -al PG:"host=localhost user=ddluser dbname=pub password=XXXXX" -sql "SELECT * FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze)"
+
+ogrinfo -al PG:"host=localhost user=ddluser dbname=pub password=XXXXX" -sql "SELECT t_id, ST_Buffer(geometrie) as geometrie FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze)"
