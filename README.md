@@ -74,7 +74,7 @@ Im Gegensatz zum erstmaligen Seeden des Plane für das Grundbuch wird nicht der 
 ```
 ogrinfo -al PG:"host=localhost user=ddluser dbname=pub password=ddluser" -sql "SELECT t_id, ST_Buffer(geometrie, 1000) as geometrie FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze)"
 
-mapcache_seed -c /opt/mapcache/mapcache.xml -f -g 2056 -t ch.so.agi.hintergrundkarte_ortho -z 11,14 -n 4 -d PG:"host=localhost user=ddluser dbname=pub password=XXXXXX" -s "SELECT t_id, ST_Buffer(geometrie) as geometrie FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze)"
+mapcache_seed -c /opt/mapcache/mapcache.xml -f -g 2056 -t ch.so.agi.hintergrundkarte_sw -z 11,14 -n 4 -d PG:"host=localhost user=ddluser dbname=pub password=XXXXXX" -s "SELECT ST_Union(geometrie) as geometrie FROM agi_mopublic_pub.mopublic_gemeindegrenze WHERE importdatum = (SELECT max(importdatum) FROM agi_mopublic_pub.mopublic_gemeindegrenze) GROUP BY importdatum"
 ```
 
 ## Varia / Notizen
